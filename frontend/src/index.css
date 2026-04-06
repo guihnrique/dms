@@ -4,6 +4,11 @@
 
 /* Neon Groove Design System - Global Styles */
 
+html {
+  background-color: #1b0424;
+  overflow-x: hidden;
+}
+
 :root {
   font-family: 'Manrope', system-ui, sans-serif;
   line-height: 1.5;
@@ -22,10 +27,13 @@ body {
   min-height: 100vh;
   background-color: #1b0424;
   color: #fbdbff;
+  overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 #root {
   min-height: 100vh;
+  background-color: #1b0424;
 }
 
 /* Glassmorphism Utilities */

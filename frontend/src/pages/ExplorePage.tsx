@@ -7,36 +7,55 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
-import { albumsAPI, artistsAPI } from '../api/services';
+import { albumsAPI, searchAPI } from '../api/services';
 import type { Album } from '../api/types';
-
-const GENRES = [
-  'Para Você',
-  'Eletrônica',
-  'Lo-Fi Jazz',
-  'Rock Alternativo',
-  'Techno',
-  'Deep House',
-  'Chillwave',
-];
 
 export function ExplorePage() {
   const [albums, setAlbums] = useState<Album[]>([]);
-  const [selectedGenre, setSelectedGenre] = useState('Para Você');
+  const [allAlbums, setAllAlbums] = useState<Album[]>([]);
+  const [genres, setGenres] = useState<string[]>(['Todos']);
+  const [selectedGenre, setSelectedGenre] = useState('Todos');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadContent();
   }, []);
 
+  useEffect(() => {
+    filterByGenre();
+  }, [selectedGenre, allAlbums]);
+
   async function loadContent() {
     try {
-      const data = await albumsAPI.list(1, 10);
+      // Load more albums to get variety
+      const data = await albumsAPI.list(1, 50);
+      setAllAlbums(data.items);
       setAlbums(data.items);
+
+      // Extract unique genres from albums
+      const uniqueGenres = Array.from(
+        new Set(
+          data.items
+            .map((album) => album.genre)
+            .filter((genre): genre is string => !!genre)
+        )
+      );
+      setGenres(['Todos', ...uniqueGenres.sort()]);
     } catch (error) {
       console.error('Failed to load content:', error);
     } finally {
       setLoading(false);
+    }
+  }
+
+  function filterByGenre() {
+    if (selectedGenre === 'Todos') {
+      setAlbums(allAlbums);
+    } else {
+      const filtered = allAlbums.filter(
+        (album) => album.genre === selectedGenre
+      );
+      setAlbums(filtered);
     }
   }
 
@@ -81,7 +100,7 @@ export function ExplorePage() {
 
         {/* Genre Filters */}
         <section className="px-8 py-10 flex gap-4 overflow-x-auto no-scrollbar">
-          {GENRES.map((genre) => (
+          {genres.map((genre) => (
             <button
               key={genre}
               onClick={() => setSelectedGenre(genre)}
@@ -124,6 +143,23 @@ export function ExplorePage() {
                 className="animate-spin text-on-surface-variant"
                 decorative
               />
+            </div>
+          ) : albums.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-20">
+              <div className="w-24 h-24 rounded-full bg-surface-container flex items-center justify-center mb-6">
+                <Icon
+                  name="album"
+                  size="lg"
+                  className="text-on-surface-variant"
+                  decorative
+                />
+              </div>
+              <h3 className="font-headline text-2xl font-bold text-white mb-2">
+                Nenhum álbum encontrado
+              </h3>
+              <p className="text-on-surface-variant text-center max-w-md">
+                Não encontramos álbuns no gênero "{selectedGenre}". Tente selecionar outro gênero.
+              </p>
             </div>
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">

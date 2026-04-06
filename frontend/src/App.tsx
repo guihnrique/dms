@@ -18,6 +18,8 @@ import {
   ArtistProfilePage,
   AlbumsListPage,
   AlbumDetailPage,
+  SongDetailPage,
+  CreateReviewPage,
 } from './pages';
 
 function AppContent() {
@@ -40,6 +42,8 @@ function AppContent() {
           <Route path="/artists/:id" element={<ArtistProfilePage />} />
           <Route path="/albums" element={<AlbumsListPage />} />
           <Route path="/albums/:id" element={<AlbumDetailPage />} />
+          <Route path="/songs/:id" element={<SongDetailPage />} />
+          <Route path="/songs/:id/review" element={<CreateReviewPage />} />
         </Routes>
       </main>
     </div>

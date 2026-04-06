@@ -13,3 +13,5 @@ export { ArtistsListPage } from './ArtistsListPage';
 export { ArtistProfilePage } from './ArtistProfilePage';
 export { AlbumsListPage } from './AlbumsListPage';
 export { AlbumDetailPage } from './AlbumDetailPage';
+export { SongDetailPage } from './SongDetailPage';
+export { CreateReviewPage } from './CreateReviewPage';

@@ -9,21 +9,7 @@ from app.repositories.album_repository import AlbumRepository
 from app.repositories.artist_repository import ArtistRepository
 from app.services.validation_service import ValidationService
 from app.models.album import Album
-
-
-class AlbumResponse:
-    """Album response with artist and song stats"""
-    def __init__(self, album: Album, artist_name: str = None, songs_count: int = 0, total_duration_seconds: int = 0):
-        self.id = album.id
-        self.title = album.title
-        self.artist_id = album.artist_id
-        self.artist_name = artist_name or (album.artist.name if album.artist else None)
-        self.release_year = album.release_year
-        self.album_cover_url = album.album_cover_url
-        self.songs_count = songs_count
-        self.total_duration_seconds = total_duration_seconds
-        self.created_at = album.created_at
-        self.updated_at = album.updated_at
+from app.schemas.album import AlbumResponse
 
 
 class AlbumService:
@@ -71,7 +57,12 @@ class AlbumService:
             album_cover_url=album_cover_url
         )
 
-        return AlbumResponse(album, artist_name=artist.name, songs_count=0, total_duration_seconds=0)
+        # Get stats for the newly created album
+        albums_with_stats = await self.album_repo.get_albums_with_song_stats([album.id])
+
+        from pydantic import TypeAdapter
+        adapter = TypeAdapter(AlbumResponse)
+        return adapter.validate_python(albums_with_stats[0])
 
     async def get_album_by_id(self, album_id: int) -> Optional[AlbumResponse]:
         """Get album by ID with song stats"""
@@ -83,15 +74,12 @@ class AlbumService:
         albums_with_stats = await self.album_repo.get_albums_with_song_stats([album_id])
 
         if not albums_with_stats:
-            return AlbumResponse(album, songs_count=0, total_duration_seconds=0)
+            return None
 
-        stats = albums_with_stats[0]
-        return AlbumResponse(
-            album,
-            artist_name=stats["artist_name"],
-            songs_count=stats["songs_count"],
-            total_duration_seconds=stats["total_duration_seconds"]
-        )
+        # Use TypeAdapter to convert dict to Pydantic model
+        from pydantic import TypeAdapter
+        adapter = TypeAdapter(AlbumResponse)
+        return adapter.validate_python(albums_with_stats[0])
 
     async def list_albums(
         self,
@@ -105,17 +93,11 @@ class AlbumService:
         if items:
             album_ids = [album.id for album in items]
             albums_with_stats = await self.album_repo.get_albums_with_song_stats(album_ids)
-            stats_map = {a["id"]: a for a in albums_with_stats}
 
-            responses = [
-                AlbumResponse(
-                    album,
-                    artist_name=stats_map.get(album.id, {}).get("artist_name"),
-                    songs_count=stats_map.get(album.id, {}).get("songs_count", 0),
-                    total_duration_seconds=stats_map.get(album.id, {}).get("total_duration_seconds", 0)
-                )
-                for album in items
-            ]
+            # Convert dicts to Pydantic models
+            from pydantic import TypeAdapter
+            adapter = TypeAdapter(AlbumResponse)
+            responses = [adapter.validate_python(stats) for stats in albums_with_stats]
         else:
             responses = []
 
@@ -158,11 +140,10 @@ class AlbumService:
 
         # Get updated stats
         albums_with_stats = await self.album_repo.get_albums_with_song_stats([album_id])
-        stats = albums_with_stats[0] if albums_with_stats else {}
 
-        return AlbumResponse(
-            album,
-            artist_name=stats.get("artist_name"),
-            songs_count=stats.get("songs_count", 0),
-            total_duration_seconds=stats.get("total_duration_seconds", 0)
-        )
+        if not albums_with_stats:
+            return None
+
+        from pydantic import TypeAdapter
+        adapter = TypeAdapter(AlbumResponse)
+        return adapter.validate_python(albums_with_stats[0])

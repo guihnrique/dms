@@ -176,8 +176,9 @@ export function AlbumDetailPage() {
 
           <div className="space-y-1">
             {songs.map((song, index) => (
-              <div
+              <Link
                 key={song.id}
+                to={`/songs/${song.id}`}
                 className="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer border-b border-outline-variant/10"
               >
                 <div className="w-10 flex justify-center">
@@ -200,17 +201,20 @@ export function AlbumDetailPage() {
                 </div>
 
                 <div className="hidden md:flex items-center gap-8 text-on-surface-variant text-sm">
-                  <button className="opacity-0 group-hover:opacity-100 hover:text-white transition-all">
+                  <button
+                    onClick={(e) => e.preventDefault()}
+                    className="opacity-0 group-hover:opacity-100 hover:text-white transition-all"
+                  >
                     <Icon name="favorite" size="sm" decorative />
                   </button>
                   <span className="font-mono">
                     {formatDuration(song.duration_seconds)}
                   </span>
-                  <button>
+                  <button onClick={(e) => e.preventDefault()}>
                     <Icon name="more_horiz" size="sm" decorative />
                   </button>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

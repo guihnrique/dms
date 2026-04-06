@@ -47,6 +47,7 @@ class AlbumResponse(BaseModel):
     artist_name: Optional[str]
     release_year: int
     album_cover_url: Optional[str]
+    genre: Optional[str]
     songs_count: int
     total_duration_seconds: int
     created_at: datetime

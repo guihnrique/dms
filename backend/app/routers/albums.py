@@ -40,18 +40,7 @@ async def create_album(
             album_cover_url=album_request.album_cover_url
         )
 
-        return AlbumResponse(
-            id=album.id,
-            title=album.title,
-            artist_id=album.artist_id,
-            artist_name=album.artist_name,
-            release_year=album.release_year,
-            album_cover_url=album.album_cover_url,
-            songs_count=album.songs_count,
-            total_duration_seconds=album.total_duration_seconds,
-            created_at=album.created_at,
-            updated_at=album.updated_at
-        )
+        return album
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -68,18 +57,7 @@ async def get_album(
     if not album:
         raise HTTPException(status_code=404, detail="Album not found")
 
-    return AlbumResponse(
-        id=album.id,
-        title=album.title,
-        artist_id=album.artist_id,
-        artist_name=album.artist_name,
-        release_year=album.release_year,
-        album_cover_url=album.album_cover_url,
-        songs_count=album.songs_count,
-        total_duration_seconds=album.total_duration_seconds,
-        created_at=album.created_at,
-        updated_at=album.updated_at
-    )
+    return album
 
 
 @router.get("", response_model=PaginatedAlbumResponse)
@@ -93,24 +71,8 @@ async def list_albums(
     service = AlbumService(db)
     result = await service.list_albums(page=page, page_size=page_size, artist_id=artist_id)
 
-    responses = [
-        AlbumResponse(
-            id=album.id,
-            title=album.title,
-            artist_id=album.artist_id,
-            artist_name=album.artist_name,
-            release_year=album.release_year,
-            album_cover_url=album.album_cover_url,
-            songs_count=album.songs_count,
-            total_duration_seconds=album.total_duration_seconds,
-            created_at=album.created_at,
-            updated_at=album.updated_at
-        )
-        for album in result["items"]
-    ]
-
     return PaginatedAlbumResponse(
-        items=responses,
+        items=result["items"],
         total=result["total"],
         page=result["page"],
         page_size=result["page_size"]
@@ -137,17 +99,6 @@ async def update_album(
         if not album:
             raise HTTPException(status_code=404, detail="Album not found")
 
-        return AlbumResponse(
-            id=album.id,
-            title=album.title,
-            artist_id=album.artist_id,
-            artist_name=album.artist_name,
-            release_year=album.release_year,
-            album_cover_url=album.album_cover_url,
-            songs_count=album.songs_count,
-            total_duration_seconds=album.total_duration_seconds,
-            created_at=album.created_at,
-            updated_at=album.updated_at
-        )
+        return album
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
