@@ -1,0 +1,22 @@
+{
+  "feature_name": "sonic-immersive-platform",
+  "created_at": "2026-04-02T11:05:00Z",
+  "updated_at": "2026-04-02T11:15:00Z",
+  "language": "en",
+  "phase": "requirements-generated",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": false,
+      "approved": false
+    },
+    "tasks": {
+      "generated": false,
+      "approved": false
+    }
+  },
+  "ready_for_implementation": false
+}

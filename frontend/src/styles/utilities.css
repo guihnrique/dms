@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Glassmorphism utility */
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/5;
+    border: 1px solid rgba(138, 106, 146, 0.2);
+  }
+
+  /* Glassmorphism fallback for unsupported browsers */
+  @supports not (backdrop-filter: blur()) {
+    .glass-effect {
+      background: rgba(42, 11, 53, 0.95);
+    }
+  }
+
+  /* Primary gradient utility */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-dim to-secondary;
+  }
+
+  /* Text gradient (gradient clipped to text) */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-dim to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Hover scale effect */
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-[1.02];
+  }
+
+  /* Mobile-first responsive utilities - Task 9 */
+  @media (max-width: 639px) {
+    .mobile-touch-target {
+      @apply min-h-[44px] min-w-[44px];
+    }
+
+    .mobile-button-full {
+      @apply w-full;
+    }
+
+    .mobile-reduced-padding {
+      @apply px-3 py-2;
+    }
+  }
+
+  /* Reduced motion support - Task 10.3 */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .hover-scale {
+      transform: none !important;
+    }
+  }
+}

@@ -1,0 +1,302 @@
+/**
+ * Automated Accessibility Tests - Task 14.4*
+ * Requirements: 10 (Accessibility)
+ *
+ * Tests WCAG 2.1 Level AA compliance using axe-core
+ */
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/react';
+import { axe, toHaveNoViolations } from 'jest-axe';
+import { Button, Card, Input, Icon, Navigation, Layout } from '../components';
+
+// Extend expect with axe matchers
+expect.extend({ toHaveNoViolations });
+
+describe('Automated Accessibility Tests - Task 14.4*', () => {
+  describe('Button Accessibility', () => {
+    it('should have no accessibility violations for primary button', async () => {
+      const { container } = render(
+        <Button variant="primary">Click me</Button>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for all button variants', async () => {
+      const { container } = render(
+        <div>
+          <Button variant="primary">Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="ghost">Ghost</Button>
+        </div>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for loading button', async () => {
+      const { container } = render(
+        <Button loading>Loading...</Button>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for disabled button', async () => {
+      const { container } = render(
+        <Button disabled>Disabled</Button>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('Card Accessibility', () => {
+    it('should have no violations for basic card', async () => {
+      const { container } = render(
+        <Card>
+          <Card.Content>Card content</Card.Content>
+        </Card>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for card with image', async () => {
+      const { container } = render(
+        <Card imageSrc="/test.jpg" imageAlt="Test image">
+          <Card.Header>Header</Card.Header>
+          <Card.Content>Content</Card.Content>
+        </Card>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for interactive card', async () => {
+      const { container } = render(
+        <Card interactive>
+          <Card.Content>Interactive card</Card.Content>
+        </Card>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('Input Accessibility', () => {
+    it('should have no violations for input with label', async () => {
+      const { container } = render(
+        <Input label="Email" placeholder="Enter email" />
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for input with error', async () => {
+      const { container } = render(
+        <Input label="Email" error="This field is required" />
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for password input', async () => {
+      const { container } = render(
+        <Input label="Password" type="password" />
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for disabled input', async () => {
+      const { container } = render(
+        <Input label="Disabled" disabled />
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('Icon Accessibility', () => {
+    it('should have no violations for decorative icon', async () => {
+      const { container } = render(
+        <Icon name="home" decorative />
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for semantic icon with aria-label', async () => {
+      const { container } = render(
+        <Icon name="home" decorative={false} aria-label="Home" />
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('Navigation Accessibility', () => {
+    it('should have no violations for navigation', async () => {
+      const { container } = render(
+        <Navigation>
+          <Navigation.Item href="/">Home</Navigation.Item>
+          <Navigation.Item href="/about">About</Navigation.Item>
+        </Navigation>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for active navigation item', async () => {
+      const { container } = render(
+        <Navigation>
+          <Navigation.Item href="/" active>Home</Navigation.Item>
+          <Navigation.Item href="/about">About</Navigation.Item>
+        </Navigation>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('Layout Accessibility', () => {
+    it('should have no violations for container layout', async () => {
+      const { container } = render(
+        <Layout.Container>
+          <p>Container content</p>
+        </Layout.Container>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for grid layout', async () => {
+      const { container } = render(
+        <Layout.Grid cols={3}>
+          <div>Item 1</div>
+          <div>Item 2</div>
+          <div>Item 3</div>
+        </Layout.Grid>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('Complex Component Integration', () => {
+    it('should have no violations for form with inputs and buttons', async () => {
+      const { container } = render(
+        <form>
+          <Input label="Name" type="text" placeholder="Your name" />
+          <Input label="Email" type="email" placeholder="your@email.com" />
+          <Button variant="primary" type="submit">Submit</Button>
+        </form>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for card with all subcomponents', async () => {
+      const { container } = render(
+        <Card>
+          <Card.Header>
+            <h2>Card Title</h2>
+          </Card.Header>
+          <Card.Content>
+            <p>Card content goes here</p>
+          </Card.Content>
+          <Card.Footer>
+            <Button variant="primary">Action</Button>
+          </Card.Footer>
+        </Card>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+
+    it('should have no violations for navigation with icons', async () => {
+      const { container } = render(
+        <Navigation>
+          <Navigation.Item href="/">
+            <Icon name="home" decorative /> Home
+          </Navigation.Item>
+          <Navigation.Item href="/settings">
+            <Icon name="settings" decorative /> Settings
+          </Navigation.Item>
+        </Navigation>
+      );
+
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('WCAG 2.1 Level AA Compliance', () => {
+    it('should pass all WCAG 2.1 AA checks for complete page', async () => {
+      const { container } = render(
+        <main>
+          <Navigation>
+            <Navigation.Item href="/" active>Home</Navigation.Item>
+            <Navigation.Item href="/about">About</Navigation.Item>
+          </Navigation>
+
+          <Layout.Container>
+            <Layout.Grid cols={2}>
+              <Card glass>
+                <Card.Header>
+                  <h2>Welcome</h2>
+                </Card.Header>
+                <Card.Content>
+                  <p>This is a test page</p>
+                  <Input label="Email" type="email" placeholder="your@email.com" />
+                  <Button variant="primary">Subscribe</Button>
+                </Card.Content>
+              </Card>
+
+              <Card>
+                <Card.Content>
+                  <Icon name="star" decorative={false} aria-label="Featured" />
+                  <p>Featured content</p>
+                </Card.Content>
+              </Card>
+            </Layout.Grid>
+          </Layout.Container>
+        </main>
+      );
+
+      const results = await axe(container, {
+        rules: {
+          // Ensure we're testing WCAG 2.1 Level AA
+          'color-contrast': { enabled: true },
+          'aria-roles': { enabled: true },
+          'aria-valid-attr': { enabled: true },
+          'button-name': { enabled: true },
+          'label': { enabled: true },
+          'link-name': { enabled: true },
+        },
+      });
+
+      expect(results).toHaveNoViolations();
+    });
+  });
+});

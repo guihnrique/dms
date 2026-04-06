@@ -1,0 +1,23 @@
+{
+  "feature_name": "music-catalog-management",
+  "created_at": "2026-04-02T12:30:00Z",
+  "updated_at": "2026-04-06T19:45:00Z",
+  "language": "en",
+  "phase": "implemented",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": true,
+      "approved": true
+    },
+    "tasks": {
+      "generated": true,
+      "approved": true
+    }
+  },
+  "ready_for_implementation": false,
+  "implementation_completed": true
+}

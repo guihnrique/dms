@@ -1,0 +1,397 @@
+# Implementation Tasks
+
+## Overview
+Implementation tasks for Neon-Groove-Design-System following Test-Driven Development (TDD) methodology. All tasks follow Red-Green-Refactor cycle: write failing test first, implement minimal code to pass, then refactor while keeping tests green.
+
+## Task Breakdown
+
+- [x] 1. Project setup and configuration
+- [x] 1.1 (P) Initialize React + TypeScript project with Vite
+  - Create new Vite project with React + TypeScript template
+  - Configure tsconfig.json for strict mode and path aliases
+  - Set up project structure (src/components, src/styles, src/types)
+  - Install core dependencies (React 18.x, TypeScript 5.x)
+  - Verify hot module replacement works with Fast Refresh
+  - _Requirements: 14.4_
+
+- [x] 1.2 (P) Configure Tailwind CSS with custom theme
+  - Install Tailwind CSS 3.4+ with PostCSS and Autoprefixer
+  - Create tailwind.config.js with "Neon Groove" design tokens
+  - Define color system (deep violet base #1b0424, neon gradients primary #a533ff to secondary #00d2fd)
+  - Configure surface hierarchy (surface_container_low, surface_container, surface_bright)
+  - Set minimum border radius to 0.75rem (no 90-degree corners)
+  - Configure custom spacing scale (12px, 16px base)
+  - Enable JIT mode and configure content paths to scan React components
+  - Create src/styles/utilities.css with glassmorphism and gradient utilities
+  - _Requirements: 1, 11_
+
+- [x] 1.3 (P) Configure typography with Google Fonts
+  - Add Google Fonts link for Space Grotesk and Manrope with font-display: swap
+  - Configure Tailwind theme with custom font families (headline: Space Grotesk, body: Manrope)
+  - Define typography scale (display: 3.5rem, title, body, label scales)
+  - Set up system fallback fonts (sans-serif) for slow connections
+  - Verify fonts load correctly and fallbacks display properly
+  - _Requirements: 2_
+
+- [x] 1.4 (P) Configure Material Symbols icons
+  - Add Google Fonts CSS link for Material Symbols Outlined with thin stroke weight (wght=200)
+  - Create icon subset with MVP icons only (home, search, play_arrow, pause, favorite, person, menu, close, arrow_back, arrow_forward, add, more_vert)
+  - Configure font-variation-settings for 1.5px thin stroke weight
+  - Verify icons render correctly with thin stroke
+  - _Requirements: 7_
+
+- [x] 2. Implement core utility classes
+- [x] 2.1 (P) Create glassmorphism utility classes
+  - Write failing test: test_glassmorphism_utility_applies_backdrop_blur
+  - Write failing test: test_glassmorphism_fallback_for_unsupported_browsers
+  - Implement .glass-effect utility with backdrop-blur-xl and bg-white/5
+  - Apply ghost border with outline_variant at 15% opacity
+  - Implement @supports fallback for browsers without backdrop-filter support
+  - Verify fallback uses solid background (rgba(42, 11, 53, 0.95))
+  - _Requirements: 3_
+
+- [x] 2.2 (P) Create gradient utility classes
+  - Write failing test: test_gradient_primary_applies_neon_gradient
+  - Write failing test: test_text_gradient_clips_gradient_to_text
+  - Implement .gradient-primary utility with from-primary-dim to-secondary
+  - Implement .text-gradient utility with background-clip: text
+  - Create hover-scale utility with 1.02x transform
+  - _Requirements: 9_
+
+- [x] 3. Button component implementation
+- [x] 3.1 Implement Button component structure
+  - Write failing test: test_button_renders_with_children
+  - Write failing test: test_button_forwards_ref_to_button_element
+  - Create Button component as React.forwardRef with TypeScript interface
+  - Define ButtonProps interface with variant, size, loading props
+  - Implement basic button rendering with children
+  - Forward ref to underlying button element for DOM access
+  - _Requirements: 4_
+
+- [x] 3.2 Implement Button variants and sizes
+  - Write failing test: test_button_primary_variant_uses_electric_gradient
+  - Write failing test: test_button_secondary_variant_uses_glass_effect
+  - Write failing test: test_button_ghost_variant_minimal_style
+  - Write failing test: test_button_size_sm_md_lg_applies_correct_padding
+  - Implement primary variant with gradient-primary utility (electric gradient)
+  - Implement secondary variant with glass-effect and ghost border
+  - Implement ghost variant with minimal transparent style
+  - Implement size variants (sm, md, lg) with appropriate padding
+  - Apply rounded-full for primary buttons (9999px border radius)
+  - _Requirements: 4_
+
+- [x] 3.3 Implement Button states and interactions
+  - Write failing test: test_button_disabled_state_reduces_opacity
+  - Write failing test: test_button_loading_state_shows_spinner
+  - Write failing test: test_button_focus_shows_2px_outline
+  - Write failing test: test_button_hover_applies_scale_effect
+  - Implement disabled state with reduced opacity
+  - Implement loading state with spinner icon and disabled interaction
+  - Implement focus state with 2px outline in primary color
+  - Implement hover scale effect (1.02x transform)
+  - _Requirements: 4_
+
+- [x] 3.4* Test Button accessibility
+  - Write failing test: test_button_aria_label_provided
+  - Write failing test: test_button_keyboard_navigation_works
+  - Verify button supports ARIA labels for accessibility
+  - Verify button keyboard navigation (Tab, Enter, Space)
+  - Verify focus indicators visible on all button variants
+  - _Requirements: 10_
+
+- [x] 4. Card component implementation
+- [x] 4.1 Implement Card component structure
+  - Write failing test: test_card_renders_children_correctly
+  - Write failing test: test_card_applies_xl_border_radius
+  - Create Card component with TypeScript interface
+  - Define CardProps interface with glass, interactive, imageSrc props
+  - Implement XL border radius (1.5rem / 24px)
+  - Render children content correctly
+  - _Requirements: 5_
+
+- [x] 4.2 Implement Card glassmorphism and hover
+  - Write failing test: test_card_glass_prop_applies_glassmorphism
+  - Write failing test: test_card_interactive_applies_hover_scale
+  - Implement glass prop to apply glassmorphism effect (backdrop-blur-xl)
+  - Implement interactive prop to apply hover scale (1.02x transform)
+  - Implement hover state with brightness increase for interactive cards
+  - Verify no dividers or horizontal rules inside cards
+  - _Requirements: 3, 5_
+
+- [x] 4.3 Implement Card image lazy loading
+  - Write failing test: test_card_image_lazy_loads
+  - Write failing test: test_card_image_alt_text_provided
+  - Implement optional image with imageSrc prop
+  - Apply native lazy loading (loading="lazy") for images
+  - Require imageAlt prop when imageSrc provided for accessibility
+  - _Requirements: 5, 10, 14_
+
+- [x] 4.4 Implement Card compound components
+  - Write failing test: test_card_header_renders_correctly
+  - Write failing test: test_card_content_renders_correctly
+  - Write failing test: test_card_footer_renders_correctly
+  - Implement Card.Header subcomponent for card header section
+  - Implement Card.Content subcomponent for main content
+  - Implement Card.Footer subcomponent for footer actions
+  - _Requirements: 5_
+
+- [x] 5. Input component implementation
+- [x] 5.1 Implement Input component structure
+  - Write failing test: test_input_renders_with_label
+  - Write failing test: test_input_forwards_ref_to_input_element
+  - Create Input component as React.forwardRef with TypeScript interface
+  - Define InputProps interface with label, error, type props
+  - Implement minimalist design with transparent background
+  - Forward ref to underlying input element
+  - _Requirements: 6_
+
+- [x] 5.2 Implement Input focus and validation
+  - Write failing test: test_input_focus_shows_2px_bottom_accent
+  - Write failing test: test_input_error_shows_red_accent_and_message
+  - Implement focus state with 2px bottom accent in primary color
+  - Implement error state with red accent and error message below input
+  - Link error message via aria-describedby for accessibility
+  - Support high contrast text color (on_surface) for dark background
+  - _Requirements: 6, 10_
+
+- [x] 5.3 Implement Input types and states
+  - Write failing test: test_input_supports_text_email_password_search_types
+  - Write failing test: test_input_disabled_state_reduces_opacity
+  - Support input types: text, email, password, search
+  - Implement disabled state with reduced opacity
+  - Support both controlled (value + onChange) and uncontrolled (defaultValue) patterns
+  - _Requirements: 6_
+
+- [x] 6. Icon component implementation
+- [x] 6.1 (P) Implement Icon component
+  - Write failing test: test_icon_renders_material_symbols_icon
+  - Write failing test: test_icon_applies_thin_stroke_weight
+  - Write failing test: test_icon_size_variants_sm_md_lg
+  - Create Icon component with TypeScript interface
+  - Define IconProps interface with name, size, aria-label, decorative props
+  - Render Material Symbols Outlined icon with thin stroke weight (font-variation-settings: 'wght' 200)
+  - Implement size variants (sm: 16px, md: 24px, lg: 32px)
+  - Support color variants from Tailwind color system
+  - _Requirements: 7_
+
+- [x] 6.2* Test Icon accessibility
+  - Write failing test: test_icon_aria_label_provided_for_semantic_icons
+  - Write failing test: test_icon_aria_hidden_for_decorative_icons
+  - Verify semantic icons include aria-label
+  - Verify decorative icons use aria-hidden attribute
+  - Warn in console if semantic icon missing aria-label (development mode)
+  - _Requirements: 7, 10_
+
+- [x] 7. Navigation component implementation
+- [x] 7.1 Implement Navigation component structure
+  - Write failing test: test_navigation_renders_logo_links_actions
+  - Create Navigation component with TypeScript interface
+  - Define NavigationProps interface with logo, links, actions, mobileMenuOpen props
+  - Render sticky top navigation with glassmorphism backdrop-blur effect
+  - Display logo, navigation links, and user action buttons
+  - _Requirements: 3, 8_
+
+- [x] 7.2 Implement Navigation responsive layout
+  - Write failing test: test_navigation_mobile_menu_toggles_on_button_click
+  - Write failing test: test_navigation_horizontal_layout_on_desktop
+  - Write failing test: test_navigation_vertical_stack_on_mobile
+  - Implement mobile-first responsive design (stack vertically on mobile <768px)
+  - Implement horizontal layout on desktop (>=768px)
+  - Implement mobile hamburger menu toggle with Icon component
+  - _Requirements: 8, 13_
+
+- [x] 7.3* Test Navigation keyboard accessibility
+  - Write failing test: test_navigation_keyboard_navigation_tab_enter_escape
+  - Write failing test: test_navigation_focus_indicators_visible
+  - Verify Tab navigation works through all navigation links
+  - Verify Enter key activates links
+  - Verify Escape key closes mobile menu
+  - Verify focus indicators visible on all focusable elements
+  - _Requirements: 10_
+
+- [x] 8. Layout system implementation
+- [x] 8.1 (P) Implement responsive layout utilities
+  - Write failing test: test_layout_supports_320px_to_3840px_viewports
+  - Write failing test: test_layout_breakpoints_sm_md_lg_xl_2xl
+  - Configure Tailwind breakpoints (sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px)
+  - Implement mobile-first responsive design approach
+  - Create container utilities with responsive max-widths
+  - Verify grid and flexbox utilities work via Tailwind
+  - _Requirements: 8_
+
+- [x] 8.2 (P) Test responsive stacking behavior
+  - Write failing test: test_layout_stacks_content_vertically_below_768px
+  - Write failing test: test_layout_uses_12px_16px_spacing_scale
+  - Verify content stacks vertically on viewports below 768px
+  - Verify 12px and 16px spacing scale applied for major sections
+  - _Requirements: 8_
+
+- [x] 9. Mobile-first optimizations
+- [x] 9.1 Implement mobile touch targets
+  - Write failing test: test_mobile_touch_targets_minimum_44x44px
+  - Write failing test: test_mobile_buttons_full_width_below_640px
+  - Increase touch target sizes to minimum 44x44px on mobile (<640px)
+  - Implement full-width buttons on mobile viewports
+  - Reduce padding and margins on small screens
+  - _Requirements: 13_
+
+- [x] 9.2 Implement mobile navigation stack
+  - Write failing test: test_mobile_navigation_stacks_vertically_below_768px
+  - Write failing test: test_mobile_hides_secondary_content
+  - Stack navigation vertically on viewports below 768px
+  - Hide secondary content on mobile, show on tablet+
+  - _Requirements: 13_
+
+- [x] 9.3* Test mobile swipe gestures
+  - Write failing test: test_card_carousel_supports_swipe_gestures
+  - Implement swipe gesture support for card carousels
+  - _Requirements: 13_
+
+- [x] 10. Accessibility implementation
+- [x] 10.1 Implement ARIA labels and semantic HTML
+  - Write failing test: test_all_interactive_elements_have_aria_labels
+  - Write failing test: test_semantic_html_elements_used
+  - Provide ARIA labels for all interactive elements (buttons, inputs, links)
+  - Use semantic HTML elements (button, nav, main, article)
+  - Ensure screen reader announcements for dynamic content
+  - _Requirements: 10_
+
+- [x] 10.2 Implement keyboard navigation support
+  - Write failing test: test_keyboard_navigation_throughout_components
+  - Write failing test: test_focus_indicators_visible_on_all_elements
+  - Support keyboard navigation throughout all components (Tab, Enter, Space, Escape)
+  - Implement visible focus indicators for all focusable elements
+  - Test with keyboard-only navigation (no mouse)
+  - _Requirements: 10_
+
+- [x] 10.3 Implement reduced motion support
+  - Write failing test: test_animations_disabled_with_prefers_reduced_motion
+  - Implement prefers-reduced-motion media query
+  - Disable animations when user prefers reduced motion
+  - Apply to hover scale effects, transitions, and loading spinners
+  - _Requirements: 10_
+
+- [x] 10.4* Test contrast ratios for WCAG AA compliance
+  - Write failing test: test_contrast_ratios_meet_wcag_aa_minimum
+  - Verify all text colors meet WCAG AA contrast ratios (4.5:1 for normal text, 3:1 for large text)
+  - Test on_surface (#fbdbff) on background (#1b0424) - target 10.5:1
+  - Test on_surface_variant (#c39fca) on background - target 5.8:1
+  - Test gradient button text maintains contrast on both gradient stops
+  - _Requirements: 2, 10_
+
+- [x] 11. Performance optimization
+- [x] 11.1 Implement code splitting and lazy loading
+  - Write failing test: test_images_lazy_load_with_placeholder
+  - Write failing test: test_fonts_load_with_font_display_swap
+  - Implement lazy loading for images with loading="lazy" attribute
+  - Verify fonts use font-display: swap to prevent FOIT (Flash of Invisible Text)
+  - _Requirements: 14_
+
+- [x] 11.2 Optimize Tailwind CSS bundle
+  - Write failing test: test_production_css_bundle_below_30kb
+  - Configure Tailwind JIT mode to generate only used utility classes
+  - Enable tree-shaking in Vite production build
+  - Verify production CSS bundle is under 30KB after compression
+  - _Requirements: 11, 14_
+
+- [x] 11.3 Configure Vite production build
+  - Write failing test: test_vite_build_generates_optimized_bundle
+  - Configure Vite build for production optimization
+  - Enable code splitting for route-based lazy loading
+  - Verify Fast Refresh works during development (<300ms startup)
+  - Generate optimized production bundle with tree-shaking
+  - _Requirements: 14_
+
+- [x] 11.4* Test performance metrics
+  - Write failing test: test_design_system_loads_within_3s_on_3g
+  - Write failing test: test_first_contentful_paint_under_1_8s
+  - Write failing test: test_total_blocking_time_under_300ms
+  - Verify design system loads within 3 seconds on 3G connection
+  - Verify First Contentful Paint (FCP) under 1.8 seconds
+  - Verify Total Blocking Time (TBT) under 300ms
+  - Run Lighthouse performance test and achieve score above 90
+  - _Requirements: 14_
+
+- [x] 12. Browser compatibility and fallbacks
+- [x] 12.1 (P) Implement glassmorphism fallback
+  - Write failing test: test_glassmorphism_fallback_on_unsupported_browsers
+  - Implement @supports CSS rule for backdrop-filter detection
+  - Apply solid background fallback (bg-surface-container/95) when backdrop-filter unsupported
+  - Test fallback in Firefox <103 (no backdrop-filter support)
+  - Verify fallback maintains WCAG AA contrast ratios
+  - _Requirements: 3_
+
+- [x] 12.2 (P) Test browser support matrix
+  - Test design system on Chrome 76+ (preferred browser)
+  - Test design system on Safari 9+ (iOS Safari fully supported)
+  - Test design system on Firefox 103+ (full glassmorphism support)
+  - Test design system on Edge 76+ (Chromium-based Edge)
+  - Verify Firefox <103 uses fallback solid background
+  - _Requirements: 3_
+
+- [x] 13. Component documentation
+- [x] 13.1 (P) Create component usage documentation
+  - Document usage examples for all components (Button, Card, Input, Icon, Navigation)
+  - Document all component props with TypeScript types
+  - Provide code snippets in TypeScript for each component
+  - Document responsive behavior for each component
+  - _Requirements: 12_
+
+- [x] 13.2 (P) Document accessibility features
+  - Document accessibility features for each component
+  - Provide examples of ARIA label usage
+  - Document keyboard navigation patterns
+  - Document screen reader support
+  - _Requirements: 12_
+
+- [x] 13.3* Create visual documentation with live previews
+  - Set up Storybook or similar documentation tool
+  - Create visual examples with live previews for all components
+  - Document component variants and states visually
+  - _Requirements: 12_
+
+- [x] 14. Integration and system testing
+- [x] 14.1 Test complete component integration
+  - Write integration test: test_button_with_icon_renders_correctly
+  - Write integration test: test_card_with_image_lazy_loads
+  - Write integration test: test_navigation_with_buttons_and_icons
+  - Write integration test: test_form_with_input_and_button_submits
+  - Verify Button renders loading icon correctly
+  - Verify Card lazy loads image on scroll
+  - Verify Navigation glassmorphism effect applied
+  - Verify Form validation error displays correctly
+  - _Requirements: 4, 5, 6, 7, 3_
+
+- [x] 14.2 Test responsive design across viewports
+  - Write E2E test: test_navigation_collapses_to_mobile_menu_below_768px
+  - Write E2E test: test_buttons_expand_full_width_on_mobile
+  - Write E2E test: test_touch_targets_44x44px_on_mobile
+  - Verify navigation collapses to mobile menu on viewport <768px
+  - Verify buttons expand to full width on mobile
+  - Verify touch targets meet 44x44px minimum on mobile
+  - _Requirements: 8, 13_
+
+- [x] 14.3 Test glassmorphism rendering across browsers
+  - Write E2E test: test_glass_effect_visible_on_supported_browsers
+  - Write E2E test: test_fallback_solid_background_on_unsupported_browsers
+  - Verify glass effect visible on Chrome, Safari, Firefox 103+
+  - Verify fallback solid background on Firefox <103
+  - _Requirements: 3_
+
+- [x] 14.4* Test accessibility with automated tools
+  - Run axe-core automated accessibility tests
+  - Verify all components pass WCAG 2.1 Level AA automated tests
+  - Test keyboard-only navigation through all components
+  - Test screen reader announcements (NVDA, JAWS, VoiceOver)
+  - _Requirements: 10_
+
+## Notes
+- All tasks follow TDD methodology: Write failing test (Red) → Implement minimal code (Green) → Refactor while keeping tests green
+- Tasks marked with `(P)` can be executed in parallel as they have no data dependencies
+- Tasks marked with `*` are optional test coverage tasks that can be deferred post-MVP
+- Use Vite for Fast Refresh during development
+- Use Tailwind JIT mode for optimal build performance
+- Load fonts with font-display: swap to prevent FOIT
+- Minimum border radius is 0.75rem (no 90-degree corners)
+- No pure black (#000000) backgrounds allowed
+- All text must meet WCAG AA contrast ratios (4.5:1 minimum)
