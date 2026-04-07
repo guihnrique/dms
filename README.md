@@ -1,64 +1,132 @@
-# DMS - Digital Music Service 🎵
+# DMS - Digital Music Store 🎵
 
-A modern, immersive music platform featuring glassmorphism UI, personalized recommendations, and comprehensive music catalog management.
+Uma plataforma moderna e imersiva de música digital com UI glassmorphism, recomendações personalizadas e gerenciamento completo de catálogo musical.
 
-## Project Structure
+> **✨ Aplicação em Produção:**
+> - 🌐 **Frontend**: [https://dms-frontend-lhlb.onrender.com](https://dms-frontend-lhlb.onrender.com)
+> - ⚙️ **Backend API**: [https://dms-7iuv.onrender.com](https://dms-7iuv.onrender.com)
+> - 📚 **API Docs**: [https://dms-7iuv.onrender.com/api/docs](https://dms-7iuv.onrender.com/api/docs)
+
+## 🎯 Funcionalidades
+
+### Backend API
+- 🔐 **Autenticação** - JWT com cookies seguros (HttpOnly, Secure, SameSite=None)
+- 🎵 **Catálogo Musical** - Artistas, Álbuns, Músicas com soft-delete
+- 📝 **Playlists** - Criar, compartilhar e reordenar playlists
+- ⭐ **Reviews & Avaliações** - Avaliar músicas com votação e moderação
+- 🔍 **Busca Multi-Entidade** - Busca ranqueada por relevância com filtros
+- 🎯 **Recomendações Personalizadas** - Sistema de recomendação baseado em preferências
+- ❤️ **Favoritos** - Sistema completo de favoritos para músicas, álbuns e artistas
+
+### Frontend React
+- 🎨 **Neon Groove Design System** - UI glassmorphism com gradientes neon
+- 🧩 **Biblioteca de Componentes** - Componentes reutilizáveis (Button, Card, Input, Icon, Navigation)
+- 📱 **Design Responsivo** - Mobile-first, acessível (WCAG AA)
+- ⚡ **Performance** - Vite + React 18 + TypeScript
+- 🖼️ **Imagens Dinâmicas** - Integração com Picsum Photos para placeholders
+
+## 🏗️ Estrutura do Projeto
 
 ```
 DMS/
-├── backend/          # FastAPI backend with PostgreSQL
-├── frontend/         # React + TypeScript frontend with Vite
+├── backend/          # FastAPI backend com PostgreSQL
+│   ├── app/
+│   │   ├── models/        # Modelos SQLAlchemy
+│   │   ├── schemas/       # Schemas Pydantic
+│   │   ├── repositories/  # Camada de acesso a dados
+│   │   ├── services/      # Lógica de negócio
+│   │   ├── routers/       # Endpoints da API
+│   │   └── middleware/    # Middleware (CORS, rate limit)
+│   ├── migrations/        # Migrações SQL
+│   └── scripts/           # Scripts utilitários
+├── frontend/         # React + TypeScript frontend com Vite
+│   └── src/
+│       ├── components/    # Componentes React
+│       ├── pages/         # Páginas
+│       ├── api/           # Cliente API
+│       └── context/       # Context providers
 └── .sdd/            # Spec-Driven Development specifications
 ```
 
-## Features
+## 🚀 Deploy em Produção
 
-### Backend API
-- 🔐 **Authentication** - JWT-based auth with secure cookies
-- 🎵 **Music Catalog** - Artists, Albums, Songs with soft-delete
-- 📝 **Playlists** - Create, share, and reorder playlists
-- ⭐ **Reviews & Ratings** - Review songs with voting and moderation
-- 🔍 **Multi-Entity Search** - Relevance-ranked search with genre/year filters
-- 🎯 **Personalized Recommendations** - ML-based recommendations with 24h caching
+### Stack de Produção
+- **Frontend**: Render.com (Static Site)
+- **Backend**: Render.com (Web Service - Python 3.11)
+- **Database**: Neon PostgreSQL (Serverless)
+- **SSL**: Automático via Cloudflare
 
-### Frontend React
-- 🎨 **Neon Groove Design System** - Glassmorphism UI with neon gradients
-- 🧩 **Component Library** - Reusable components (Button, Card, Input, Icon, Navigation)
-- 📱 **Responsive Design** - Mobile-first, accessible (WCAG AA)
-- ⚡ **Fast** - Vite + React 19 + TypeScript 6
+### URLs em Produção
+- **Aplicação**: https://dms-frontend-lhlb.onrender.com
+- **API**: https://dms-7iuv.onrender.com
+- **Documentação**: https://dms-7iuv.onrender.com/api/docs
 
-## Quick Start
+### Variáveis de Ambiente (Produção)
 
-### Prerequisites
-- Python 3.9+
+**Backend:**
+```env
+DATABASE_URL=postgresql+asyncpg://[user]:[pass]@[host]/[db]?ssl=require
+JWT_SECRET=[gerado automaticamente]
+JWT_ALGORITHM=HS256
+JWT_EXPIRATION_HOURS=24
+ENVIRONMENT=production
+FRONTEND_URL=https://dms-frontend-lhlb.onrender.com
+```
+
+**Frontend:**
+```env
+VITE_API_URL=https://dms-7iuv.onrender.com
+```
+
+### Fazer Novo Deploy
+
+Para fazer deploy de novas alterações:
+
+1. **Commit e Push** para o GitHub:
+   ```bash
+   git add .
+   git commit -m "Sua mensagem"
+   git push origin main
+   ```
+
+2. **Deploy Automático**: Render detecta automaticamente e faz redeploy (2-3 minutos)
+
+Para instruções completas de deploy inicial, veja [DEPLOY.md](DEPLOY.md).
+
+## 💻 Desenvolvimento Local
+
+### Pré-requisitos
+- Python 3.11+
 - Node.js 18+
-- PostgreSQL (Neon hosted)
+- PostgreSQL (ou usar Neon)
 
 ### Backend Setup
 
 ```bash
 cd backend
 
-# Create virtual environment
+# Criar ambiente virtual
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# Install dependencies
+# Instalar dependências
 pip install -r requirements.txt
 
-# Configure environment variables
+# Configurar variáveis de ambiente
 cp .env.example .env
-# Edit .env with your database credentials
+# Edite .env com suas credenciais
 
-# Run migrations (already executed)
-python3 run_migration.py migrations/001_create_auth_tables.sql
-# ... (migrations 002-013 already executed)
+# Executar migrações
+python scripts/run_migrations.py
 
-# Start backend server
+# (Opcional) Popular banco com dados de exemplo
+python scripts/quick_seed.py
+
+# Iniciar servidor
 uvicorn app.main:app --reload
 ```
 
-Backend runs at: `http://localhost:8000`
+Backend rodando em: `http://localhost:8000`  
 API Docs: `http://localhost:8000/api/docs`
 
 ### Frontend Setup
@@ -66,196 +134,175 @@ API Docs: `http://localhost:8000/api/docs`
 ```bash
 cd frontend
 
-# Install dependencies
+# Instalar dependências
 npm install
 
-# Configure API URL
-# .env already configured with VITE_API_URL=http://localhost:8000
+# Configurar API URL
+echo "VITE_API_URL=http://localhost:8000" > .env
 
-# Start development server
+# Iniciar servidor de desenvolvimento
 npm run dev
 ```
 
-Frontend runs at: `http://localhost:5173`
+Frontend rodando em: `http://localhost:5173`
 
-## API Endpoints
+## 📡 Endpoints da API
 
-### Authentication
-- `POST /auth/register` - Create account
-- `POST /auth/login` - Sign in
-- `POST /auth/logout` - Sign out
-- `GET /auth/me` - Get current user
+### Autenticação
+- `POST /api/v1/auth/register` - Criar conta
+- `POST /api/v1/auth/login` - Login
+- `POST /api/v1/auth/logout` - Logout
+- `GET /api/v1/auth/me` - Usuário atual
 
-### Music Catalog
-- `GET /artists` - List artists
-- `GET /albums` - List albums
-- `GET /songs` - List songs
+### Catálogo Musical
+- `GET /api/v1/artists` - Listar artistas
+- `GET /api/v1/albums` - Listar álbuns
+- `GET /api/v1/songs` - Listar músicas (filtros: album_id, artist_id)
 
 ### Playlists
-- `GET /playlists/me` - My playlists
-- `POST /playlists` - Create playlist
-- `POST /playlists/{id}/songs/{song_id}` - Add song to playlist
+- `GET /playlists/me` - Minhas playlists
+- `POST /playlists` - Criar playlist
+- `POST /playlists/{id}/songs` - Adicionar música
+- `DELETE /playlists/{id}/songs/{song_id}` - Remover música
 
-### Reviews
-- `POST /reviews` - Create/update review
-- `POST /reviews/{id}/vote` - Vote on review
+### Reviews & Avaliações
+- `GET /reviews/song/{id}` - Reviews de uma música
+- `POST /reviews` - Criar/atualizar review
+- `POST /reviews/{id}/vote` - Votar em review
 
-### Search & Recommendations
-- `GET /search?q={query}` - Multi-entity search
-- `GET /search/recommendations` - Get personalized recommendations
+### Favoritos
+- `POST /favorites/songs/{id}` - Favoritar música
+- `DELETE /favorites/songs/{id}` - Desfavoritar música
+- `GET /favorites/songs` - Listar músicas favoritas
+- `POST /favorites/albums/{id}` - Favoritar álbum
+- `POST /favorites/artists/{id}` - Favoritar artista
 
-## Database Schema
+### Busca & Recomendações
+- `GET /search?q={query}` - Busca multi-entidade
+- `GET /recommendations` - Recomendações personalizadas
+- `POST /recommendations/feedback` - Feedback de recomendação
 
-### Core Tables
-- `users` - User accounts with role-based access
-- `artists`, `albums`, `songs` - Music catalog
-- `playlists`, `playlist_songs` - User playlists
-- `reviews`, `review_votes` - Song reviews and voting
-- `search_logs` - Search analytics
-- `recommendation_feedback` - Recommendation tracking
+[Documentação completa da API](https://dms-7iuv.onrender.com/api/docs)
 
-## Tech Stack
+## 🗄️ Schema do Banco de Dados
+
+### Tabelas Principais
+- `users` - Contas de usuário com RBAC
+- `artists` - Artistas (nome, país, foto)
+- `albums` - Álbuns (título, ano, gênero, cover art)
+- `songs` - Músicas (título, duração, gênero)
+- `playlists` - Playlists dos usuários
+- `playlist_songs` - Relacionamento playlist-música
+- `reviews` - Avaliações de músicas
+- `review_votes` - Votos em reviews
+- `favorites` - Sistema de favoritos polimórfico
+- `search_logs` - Analytics de busca
+- `recommendation_feedback` - Tracking de recomendações
+
+## 🛠️ Stack Tecnológica
 
 ### Backend
-- **FastAPI** - Modern async web framework
-- **SQLAlchemy 2.0** - Async ORM
-- **PostgreSQL** - Primary database (Neon hosted)
-- **Redis** - Caching (recommendations)
-- **Pydantic 2.x** - Data validation
-- **JWT** - Authentication
-- **better-profanity** - Content moderation
+- **FastAPI** - Framework web assíncrono moderno
+- **SQLAlchemy 2.0** - ORM assíncrono
+- **PostgreSQL** - Banco de dados (Neon serverless)
+- **Pydantic 2.x** - Validação de dados
+- **JWT** - Autenticação
+- **AsyncPG** - Driver PostgreSQL assíncrono
+- **Bcrypt** - Hash de senhas
 
 ### Frontend
-- **React 19** - UI library
-- **TypeScript 6** - Type safety
+- **React 18** - Biblioteca UI
+- **TypeScript** - Tipagem estática
 - **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **React Router** - Routing
-- **Vitest** - Testing
+- **Tailwind CSS** - Framework CSS
+- **React Router** - Roteamento
+- **Material Symbols** - Sistema de ícones
 
-## Development
+### Infraestrutura
+- **Render.com** - Hospedagem (backend + frontend)
+- **Neon** - PostgreSQL serverless
+- **Cloudflare** - CDN e SSL
+- **GitHub** - Versionamento e CI/CD
 
-### Run Tests
+## 🧪 Testes
 
 ```bash
-# Backend tests
+# Testes do backend
 cd backend
 source venv/bin/activate
 pytest tests/ -v
+pytest --cov=app tests/  # Com cobertura
 
-# Frontend tests
+# Testes do frontend
 cd frontend
 npm run test
 npm run test:coverage
-
-# Storybook (component development)
-npm run storybook
 ```
 
-### Code Quality
-
-```bash
-# Backend linting
-cd backend
-flake8 app/
-
-# Frontend linting
-cd frontend
-npm run lint
-```
-
-## Architecture
+## 🏛️ Arquitetura
 
 ### Backend (Clean Architecture)
 ```
 Routes → Services → Repositories → Models
 ```
 
-- **Routes** - HTTP endpoints with dependency injection
-- **Services** - Business logic (recommendations, search scoring)
-- **Repositories** - Data access with async sessions
-- **Models** - SQLAlchemy ORM models
+- **Routes** - Endpoints HTTP com injeção de dependências
+- **Services** - Lógica de negócio
+- **Repositories** - Acesso a dados com sessões async
+- **Models** - Modelos ORM SQLAlchemy
 
 ### Frontend (Component-Based)
 ```
 Pages → Components → API Services → Backend
 ```
 
-- **Pages** - Route-level components
-- **Components** - Reusable UI components
-- **API Services** - Typed backend communication
-- **Context** - Global state (auth)
+- **Pages** - Componentes de nível de rota
+- **Components** - Componentes UI reutilizáveis
+- **API Services** - Comunicação tipada com backend
+- **Context** - Estado global (autenticação)
 
-## Performance
+## ⚡ Performance
 
-- Search response time: **<300ms** (100k records)
-- Recommendations: **<1s** with timeout fallback
-- Recommendations cache: **24 hours TTL** (Redis)
-- Database: **Row-level locking** for concurrent operations
+- Tempo de resposta da busca: **<300ms** (100k registros)
+- Recomendações: **<1s** com fallback de timeout
+- Database: **Row-level locking** para operações concorrentes
+- Frontend: **Lazy loading** de rotas e componentes
 
-## Security
+## 🔒 Segurança
 
-- **JWT cookies** - HttpOnly, Secure, SameSite
-- **Rate limiting** - 100 req/min (authenticated), 20 req/min (guest)
-- **CORS** - Explicit origins, no wildcards
-- **Password hashing** - bcrypt
-- **Content moderation** - Profanity filtering
-- **PII protection** - Search query sanitization
+- **JWT Cookies** - HttpOnly, Secure, SameSite=None (cross-origin)
+- **Rate Limiting** - 100 req/min (autenticado), 20 req/min (guest)
+- **CORS** - Origens explícitas configuradas
+- **Hash de Senhas** - Bcrypt com salt
+- **Validação** - Pydantic para validação de entrada
+- **SQL Injection** - Prevenido por SQLAlchemy ORM
 
-## Contributing
+## 🤝 Contribuindo
 
-This project follows **Spec-Driven Development (SDD)**:
+Este projeto segue **Spec-Driven Development (SDD)**:
 
-1. Requirements (EARS pattern)
-2. Design (architecture + data flow)
-3. Tasks (TDD with Red-Green-Refactor)
+1. Requirements (padrão EARS)
+2. Design (arquitetura + fluxo de dados)
+3. Tasks (TDD com Red-Green-Refactor)
 4. Implementation
 
-See `.sdd/` directory for specifications.
+Veja o diretório `.sdd/` para especificações.
 
-## License
+## 📄 Licença
 
 MIT
 
-## Deployment
+## 👥 Autores
 
-### Production Deployment (Render + Neon)
+- **Guilherme Ferreira** - [@guihnrique](https://github.com/guihnrique)
 
-Para fazer deploy da aplicação em produção usando Render.com e Neon PostgreSQL:
+## ✨ Status
 
-1. **Leia o guia completo**: [DEPLOY.md](DEPLOY.md)
-2. **Configure o banco**: String de conexão Neon
-3. **Deploy no Render**: Use o arquivo `render.yaml` incluído
-4. **Configure variáveis**: DATABASE_URL, JWT_SECRET, FRONTEND_URL, VITE_API_URL
-
-```bash
-# Opção 1: Deploy via Blueprint (Recomendado)
-# - Acesse Render Dashboard
-# - New + → Blueprint
-# - Conecte o repositório GitHub
-# - Configure as variáveis de ambiente
-
-# Opção 2: Deploy manual de cada serviço
-# - Backend: Web Service (Python)
-# - Frontend: Static Site
-```
-
-### Hospedagem Gratuita
-
-✅ **Backend**: Render.com (Free tier)
-✅ **Frontend**: Render.com Static Site (Free)
-✅ **Database**: Neon PostgreSQL (Free tier - 10 GB)
-✅ **SSL**: Automático (Render)
-
-⚠️ **Nota**: Serviços gratuitos entram em sleep após 15 min de inatividade
-
-## Status
-
-✅ **Backend**: 100% complete (5 specs implemented)
-✅ **Frontend**: 100% complete (design system + pages)
-✅ **Database**: All migrations executed
-✅ **Integration**: Ready for production
-✅ **Deploy Ready**: Render + Neon configuration included
+✅ **Backend**: 100% completo (todas specs implementadas)  
+✅ **Frontend**: 100% completo (design system + páginas)  
+✅ **Database**: Todas migrações executadas  
+✅ **Deploy**: Em produção no Render + Neon  
+✅ **CI/CD**: Deploy automático via GitHub push
 
 ---
 
