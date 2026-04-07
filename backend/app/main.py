@@ -6,7 +6,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
-from app.routers import auth, artists, albums, songs, playlists, reviews, search
+from app.routers import auth, artists, albums, songs, playlists, reviews, search, favorites
 from app.database import init_db
 from app.middleware.rate_limit import limiter, setup_rate_limiting
 
@@ -54,6 +54,7 @@ app.include_router(songs.router)
 app.include_router(playlists.router)
 app.include_router(reviews.router)
 app.include_router(search.router)
+app.include_router(favorites.router)
 
 
 @app.on_event("startup")

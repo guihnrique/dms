@@ -117,6 +117,7 @@ class PlaylistSongResponse(BaseModel):
     song_id: int = Field(..., description="Song ID")
     song_title: str = Field(..., description="Song title")
     artist_name: str = Field(..., description="Artist name")
+    album_id: int = Field(..., description="Album ID")
     album_title: str = Field(..., description="Album title")
     duration_seconds: int = Field(..., description="Song duration in seconds")
 

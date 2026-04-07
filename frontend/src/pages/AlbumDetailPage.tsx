@@ -7,7 +7,8 @@ import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
-import { albumsAPI, songsAPI, reviewsAPI } from '../api/services';
+import { AddToPlaylistModal } from '../components/AddToPlaylistModal';
+import { albumsAPI, songsAPI, reviewsAPI, favoritesAPI } from '../api/services';
 import type { Album, Song, Review } from '../api/types';
 
 export function AlbumDetailPage() {
@@ -17,12 +18,26 @@ export function AlbumDetailPage() {
   const [songs, setSongs] = useState<Song[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isFavorited, setIsFavorited] = useState(false);
+  const [favoritingLoading, setFavoritingLoading] = useState(false);
+  const [songFavorites, setSongFavorites] = useState<Record<number, boolean>>({});
+  const [votedReviews, setVotedReviews] = useState<Set<string>>(new Set());
+  const [votingReview, setVotingReview] = useState<string | null>(null);
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false);
+  const [selectedSongForPlaylist, setSelectedSongForPlaylist] = useState<number | null>(null);
 
   useEffect(() => {
     if (id) {
       loadAlbumData();
+      checkFavoriteStatus();
     }
   }, [id]);
+
+  useEffect(() => {
+    if (reviews.length > 0) {
+      loadUserVotes();
+    }
+  }, [reviews]);
 
   async function loadAlbumData() {
     try {
@@ -32,6 +47,9 @@ export function AlbumDetailPage() {
       ]);
       setAlbum(albumData);
       setSongs(songsData.items);
+
+      // Load favorite status for all songs
+      await loadSongFavorites(songsData.items.map(s => s.id));
 
       // Load reviews for first song if available
       if (songsData.items.length > 0) {
@@ -45,6 +63,73 @@ export function AlbumDetailPage() {
     }
   }
 
+  async function loadSongFavorites(songIds: number[]) {
+    try {
+      const favorites: Record<number, boolean> = {};
+      await Promise.all(
+        songIds.map(async (songId) => {
+          try {
+            const { favorited } = await favoritesAPI.checkSongFavoriteStatus(songId);
+            favorites[songId] = favorited;
+          } catch {
+            favorites[songId] = false;
+          }
+        })
+      );
+      setSongFavorites(favorites);
+    } catch (err) {
+      console.error('Failed to load song favorites:', err);
+    }
+  }
+
+  async function toggleSongFavorite(songId: number, e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    try {
+      const currentStatus = songFavorites[songId] || false;
+
+      if (currentStatus) {
+        await favoritesAPI.unfavoriteSong(songId);
+        setSongFavorites(prev => ({ ...prev, [songId]: false }));
+      } else {
+        await favoritesAPI.favoriteSong(songId);
+        setSongFavorites(prev => ({ ...prev, [songId]: true }));
+      }
+    } catch (err) {
+      console.error('Failed to toggle song favorite:', err);
+    }
+  }
+
+  async function checkFavoriteStatus() {
+    if (!id) return;
+    try {
+      const { favorited } = await favoritesAPI.checkAlbumFavoriteStatus(Number(id));
+      setIsFavorited(favorited);
+    } catch (err) {
+      console.error('Failed to check favorite status:', err);
+    }
+  }
+
+  async function toggleFavorite() {
+    if (!id) return;
+
+    try {
+      setFavoritingLoading(true);
+      if (isFavorited) {
+        await favoritesAPI.unfavoriteAlbum(Number(id));
+        setIsFavorited(false);
+      } else {
+        await favoritesAPI.favoriteAlbum(Number(id));
+        setIsFavorited(true);
+      }
+    } catch (err) {
+      console.error('Failed to toggle favorite:', err);
+    } finally {
+      setFavoritingLoading(false);
+    }
+  }
+
   function formatDuration(seconds: number): string {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -55,6 +140,40 @@ export function AlbumDetailPage() {
     const totalSeconds = songs.reduce((acc, song) => acc + song.duration_seconds, 0);
     const minutes = Math.floor(totalSeconds / 60);
     return `${songs.length} Tracks • ${minutes} min`;
+  }
+
+  async function loadUserVotes() {
+    if (reviews.length === 0) return;
+    try {
+      const reviewIds = reviews.map(r => r.id);
+      const votes = await reviewsAPI.checkVotes(reviewIds);
+      const votedIds = Object.keys(votes).filter(id => votes[id] === 'helpful');
+      setVotedReviews(new Set(votedIds));
+    } catch (err) {
+      console.error('Failed to load user votes:', err);
+    }
+  }
+
+  async function voteReview(reviewId: string) {
+    if (votedReviews.has(reviewId)) return;
+
+    try {
+      setVotingReview(reviewId);
+      await reviewsAPI.vote(reviewId, 'helpful');
+
+      setVotedReviews(prev => new Set(prev).add(reviewId));
+      setReviews(prevReviews =>
+        prevReviews.map(review =>
+          review.id === reviewId
+            ? { ...review, helpful_count: review.helpful_count + 1 }
+            : review
+        )
+      );
+    } catch (err) {
+      console.error('Failed to vote on review:', err);
+    } finally {
+      setVotingReview(null);
+    }
   }
 
   if (loading) {
@@ -154,12 +273,28 @@ export function AlbumDetailPage() {
                   <Icon name="play_arrow" size="sm" decorative />
                   Reproduzir Álbum
                 </button>
-                <button className="px-8 py-3 rounded-full border border-outline/20 backdrop-blur-md bg-white/5 text-white font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:bg-white/10 transition-all">
-                  <Icon name="playlist_add" size="sm" decorative />
-                  Adicionar à Playlist
-                </button>
-                <button className="w-12 h-12 flex items-center justify-center rounded-full border border-outline/20 backdrop-blur-md bg-white/5 text-tertiary hover:text-white transition-colors">
-                  <Icon name="favorite" size="sm" decorative />
+                {songs.length > 0 && (
+                  <button
+                    onClick={() => {
+                      setSelectedSongForPlaylist(songs[0].id);
+                      setShowPlaylistModal(true);
+                    }}
+                    className="px-8 py-3 rounded-full border border-outline/20 backdrop-blur-md bg-white/5 text-white font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:bg-white/10 transition-all"
+                  >
+                    <Icon name="playlist_add" size="sm" decorative />
+                    Adicionar à Playlist
+                  </button>
+                )}
+                <button
+                  onClick={toggleFavorite}
+                  disabled={favoritingLoading}
+                  className={`w-12 h-12 flex items-center justify-center rounded-full border border-outline/20 backdrop-blur-md transition-all ${
+                    isFavorited
+                      ? 'bg-tertiary-container text-tertiary'
+                      : 'bg-white/5 text-tertiary hover:text-white'
+                  } ${favoritingLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                >
+                  <Icon name={isFavorited ? 'favorite' : 'favorite_border'} size="sm" decorative />
                 </button>
               </div>
             </div>
@@ -202,10 +337,23 @@ export function AlbumDetailPage() {
 
                 <div className="hidden md:flex items-center gap-8 text-on-surface-variant text-sm">
                   <button
-                    onClick={(e) => e.preventDefault()}
-                    className="opacity-0 group-hover:opacity-100 hover:text-white transition-all"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setSelectedSongForPlaylist(song.id);
+                      setShowPlaylistModal(true);
+                    }}
+                    className="opacity-0 group-hover:opacity-100 hover:text-primary transition-all"
                   >
-                    <Icon name="favorite" size="sm" decorative />
+                    <Icon name="playlist_add" size="sm" decorative />
+                  </button>
+                  <button
+                    onClick={(e) => toggleSongFavorite(song.id, e)}
+                    className={`opacity-0 group-hover:opacity-100 transition-all ${
+                      songFavorites[song.id] ? 'text-tertiary opacity-100' : 'hover:text-white'
+                    }`}
+                  >
+                    <Icon name={songFavorites[song.id] ? 'favorite' : 'favorite_border'} size="sm" decorative />
                   </button>
                   <span className="font-mono">
                     {formatDuration(song.duration_seconds)}
@@ -261,7 +409,15 @@ export function AlbumDetailPage() {
                         <p className="text-on-surface-variant">{review.body}</p>
                       )}
                       <div className="flex items-center gap-4 mt-3 text-sm">
-                        <button className="flex items-center gap-1 text-on-surface-variant hover:text-white transition-colors">
+                        <button
+                          onClick={() => voteReview(review.id)}
+                          disabled={votedReviews.has(review.id) || votingReview === review.id}
+                          className={`flex items-center gap-1 transition-colors ${
+                            votedReviews.has(review.id)
+                              ? 'text-tertiary cursor-default'
+                              : 'text-on-surface-variant hover:text-white'
+                          } ${votingReview === review.id ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        >
                           <Icon name="thumb_up" size="sm" decorative />
                           <span>{review.helpful_count}</span>
                         </button>
@@ -277,6 +433,21 @@ export function AlbumDetailPage() {
           </section>
         )}
       </main>
+
+      {/* Add to Playlist Modal */}
+      {selectedSongForPlaylist && (
+        <AddToPlaylistModal
+          songId={selectedSongForPlaylist}
+          isOpen={showPlaylistModal}
+          onClose={() => {
+            setShowPlaylistModal(false);
+            setSelectedSongForPlaylist(null);
+          }}
+          onSuccess={() => {
+            console.log('Added to playlist successfully');
+          }}
+        />
+      )}
     </>
   );
 }

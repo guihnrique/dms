@@ -7,8 +7,9 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
+import { AddToPlaylistModal } from '../components/AddToPlaylistModal';
 import { useAuth } from '../context/AuthContext';
-import { songsAPI, reviewsAPI } from '../api/services';
+import { songsAPI, reviewsAPI, favoritesAPI } from '../api/services';
 import type { Song, Review } from '../api/types';
 
 export function SongDetailPage() {
@@ -19,13 +20,27 @@ export function SongDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [reviewsLoading, setReviewsLoading] = useState(false);
+  const [isFavorited, setIsFavorited] = useState(false);
+  const [favoritingLoading, setFavoritingLoading] = useState(false);
+  const [votedReviews, setVotedReviews] = useState<Set<string>>(new Set());
+  const [votingReview, setVotingReview] = useState<string | null>(null);
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false);
 
   useEffect(() => {
     if (id) {
       loadSong();
       loadReviews();
+      if (user) {
+        checkFavoriteStatus();
+      }
     }
-  }, [id]);
+  }, [id, user]);
+
+  useEffect(() => {
+    if (user && reviews.length > 0) {
+      loadUserVotes();
+    }
+  }, [user, reviews]);
 
   async function loadSong() {
     try {
@@ -48,6 +63,70 @@ export function SongDetailPage() {
       console.error('Failed to load reviews:', err);
     } finally {
       setReviewsLoading(false);
+    }
+  }
+
+  async function checkFavoriteStatus() {
+    if (!user || !id) return;
+    try {
+      const { favorited } = await favoritesAPI.checkSongFavoriteStatus(Number(id));
+      setIsFavorited(favorited);
+    } catch (err) {
+      console.error('Failed to check favorite status:', err);
+    }
+  }
+
+  async function loadUserVotes() {
+    if (!user || reviews.length === 0) return;
+    try {
+      const reviewIds = reviews.map(r => r.id);
+      const votes = await reviewsAPI.checkVotes(reviewIds);
+      const votedIds = Object.keys(votes).filter(id => votes[id] === 'helpful');
+      setVotedReviews(new Set(votedIds));
+    } catch (err) {
+      console.error('Failed to load user votes:', err);
+    }
+  }
+
+  async function toggleFavorite() {
+    if (!user || !id) return;
+
+    try {
+      setFavoritingLoading(true);
+      if (isFavorited) {
+        await favoritesAPI.unfavoriteSong(Number(id));
+        setIsFavorited(false);
+      } else {
+        await favoritesAPI.favoriteSong(Number(id));
+        setIsFavorited(true);
+      }
+    } catch (err) {
+      console.error('Failed to toggle favorite:', err);
+    } finally {
+      setFavoritingLoading(false);
+    }
+  }
+
+  async function voteReview(reviewId: string) {
+    if (!user || votedReviews.has(reviewId)) return;
+
+    try {
+      setVotingReview(reviewId);
+      await reviewsAPI.vote(reviewId, 'helpful');
+
+      // Update local state
+      setVotedReviews(prev => new Set(prev).add(reviewId));
+      setReviews(prevReviews =>
+        prevReviews.map(review =>
+          review.id === reviewId
+            ? { ...review, helpful_count: review.helpful_count + 1 }
+            : review
+        )
+      );
+    } catch (err) {
+      console.error('Failed to vote on review:', err);
+    } finally {
+      setVotingReview(null);
     }
   }
 
@@ -220,12 +299,23 @@ export function SongDetailPage() {
 
                   {user && (
                     <>
-                      <button className="flex items-center gap-2 px-6 py-4 bg-surface-container hover:bg-surface-bright rounded-full font-bold transition-colors">
-                        <Icon name="favorite_border" size="sm" decorative />
-                        Curtir
+                      <button
+                        onClick={toggleFavorite}
+                        disabled={favoritingLoading}
+                        className={`flex items-center gap-2 px-6 py-4 rounded-full font-bold transition-all ${
+                          isFavorited
+                            ? 'bg-tertiary-container text-tertiary hover:bg-tertiary-container/80'
+                            : 'bg-surface-container hover:bg-surface-bright text-white'
+                        } ${favoritingLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                      >
+                        <Icon name={isFavorited ? 'favorite' : 'favorite_border'} size="sm" decorative />
+                        {isFavorited ? 'Curtido' : 'Curtir'}
                       </button>
 
-                      <button className="flex items-center gap-2 px-6 py-4 bg-surface-container hover:bg-surface-bright rounded-full font-bold transition-colors">
+                      <button
+                        onClick={() => setShowPlaylistModal(true)}
+                        className="flex items-center gap-2 px-6 py-4 bg-surface-container hover:bg-surface-bright rounded-full font-bold transition-colors"
+                      >
                         <Icon name="add" size="sm" decorative />
                         Adicionar à Playlist
                       </button>
@@ -240,6 +330,19 @@ export function SongDetailPage() {
             </div>
           </div>
         </section>
+
+        {/* Add to Playlist Modal */}
+        {user && song && (
+          <AddToPlaylistModal
+            songId={song.id}
+            isOpen={showPlaylistModal}
+            onClose={() => setShowPlaylistModal(false)}
+            onSuccess={() => {
+              // Optional: show success message
+              console.log('Added to playlist successfully');
+            }}
+          />
+        )}
 
         {/* Reviews Section */}
         <section className="px-8 max-w-7xl mx-auto">
@@ -296,10 +399,26 @@ export function SongDetailPage() {
                     <p className="text-on-surface">{review.body}</p>
                   )}
                   <div className="flex items-center gap-4 mt-4">
-                    <button className="flex items-center gap-1 text-sm text-on-surface-variant hover:text-white transition-colors">
-                      <Icon name="thumb_up" size="sm" decorative />
-                      Útil ({review.helpful_count})
-                    </button>
+                    {user && (
+                      <button
+                        onClick={() => voteReview(review.id)}
+                        disabled={votedReviews.has(review.id) || votingReview === review.id}
+                        className={`flex items-center gap-1 text-sm transition-colors ${
+                          votedReviews.has(review.id)
+                            ? 'text-tertiary cursor-default'
+                            : 'text-on-surface-variant hover:text-white'
+                        } ${votingReview === review.id ? 'opacity-50 cursor-not-allowed' : ''}`}
+                      >
+                        <Icon name="thumb_up" size="sm" decorative />
+                        Útil ({review.helpful_count})
+                      </button>
+                    )}
+                    {!user && (
+                      <div className="flex items-center gap-1 text-sm text-on-surface-variant">
+                        <Icon name="thumb_up" size="sm" decorative />
+                        Útil ({review.helpful_count})
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

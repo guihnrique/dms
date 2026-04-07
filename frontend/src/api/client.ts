@@ -42,7 +42,20 @@ class APIClient {
         const error = await response.json().catch(() => ({
           detail: response.statusText,
         }));
-        throw new Error(error.detail || `HTTP ${response.status}`);
+        console.error('API Error:', response.status, error);
+
+        // Handle Pydantic validation errors
+        if (error.detail && Array.isArray(error.detail)) {
+          const validationErrors = error.detail.map((err: any) =>
+            `${err.loc?.join('.')} - ${err.msg}`
+          ).join(', ');
+          throw new Error(validationErrors);
+        }
+
+        const errorMessage = typeof error.detail === 'string'
+          ? error.detail
+          : JSON.stringify(error.detail) || `HTTP ${response.status}`;
+        throw new Error(errorMessage);
       }
 
       // Handle 204 No Content

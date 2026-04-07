@@ -224,8 +224,9 @@ export function SearchPage() {
                 </h2>
                 <div className="bg-surface-container rounded-2xl overflow-hidden">
                   {results.songs.map((song, index) => (
-                    <div
+                    <Link
                       key={song.id}
+                      to={`/songs/${song.id}`}
                       className={`flex items-center gap-4 p-4 hover:bg-surface-bright transition-colors group ${
                         index !== 0 ? 'border-t border-white/5' : ''
                       }`}
@@ -265,7 +266,7 @@ export function SearchPage() {
                           decorative
                         />
                       </button>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </section>

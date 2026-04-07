@@ -8,13 +8,14 @@ import { Link } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
 import { useAuth } from '../context/AuthContext';
-import { playlistsAPI, albumsAPI } from '../api/services';
+import { playlistsAPI, albumsAPI, favoritesAPI } from '../api/services';
 import type { Playlist, Album } from '../api/types';
 
 export function LibraryPage() {
   const { user } = useAuth();
   const [playlists, setPlaylists] = useState<Playlist[]>([]);
   const [albums, setAlbums] = useState<Album[]>([]);
+  const [favoriteSongsCount, setFavoriteSongsCount] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -27,12 +28,14 @@ export function LibraryPage() {
 
   async function loadLibrary() {
     try {
-      const [playlistsData, albumsData] = await Promise.all([
+      const [playlistsData, favoriteAlbumsData, favoriteSongsData] = await Promise.all([
         playlistsAPI.listMy(1, 10),
-        albumsAPI.list(1, 6),
+        favoritesAPI.listFavoriteAlbums(),
+        favoritesAPI.listFavoriteSongs(),
       ]);
       setPlaylists(playlistsData.items);
-      setAlbums(albumsData.items);
+      setAlbums(favoriteAlbumsData.items);
+      setFavoriteSongsCount(favoriteSongsData.total);
     } catch (error) {
       console.error('Failed to load library:', error);
     } finally {
@@ -95,7 +98,10 @@ export function LibraryPage() {
         {/* Library Content Bento Grid */}
         <section className="px-8 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {/* Featured: Liked Songs */}
-          <div className="md:col-span-2 lg:col-span-2 aspect-square md:aspect-auto group relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#450074] to-[#a533ff] p-6 flex flex-col justify-end shadow-2xl transition-all hover:scale-[1.02]">
+          <Link
+            to="/library/favorites"
+            className="md:col-span-2 lg:col-span-2 aspect-square md:aspect-auto group relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#450074] to-[#a533ff] p-6 flex flex-col justify-end shadow-2xl transition-all hover:scale-[1.02] cursor-pointer"
+          >
             <div className="absolute top-6 right-6">
               <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
                 <Icon
@@ -111,11 +117,11 @@ export function LibraryPage() {
                 Músicas Curtidas
               </h3>
               <p className="text-on-surface/70 font-medium">
-                {playlists.length > 0 ? playlists[0].songs_count : 0} faixas
+                {favoriteSongsCount} {favoriteSongsCount === 1 ? 'faixa' : 'faixas'}
               </p>
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          </div>
+          </Link>
 
           {/* Bento: Saved Albums */}
           <div className="md:col-span-2 lg:col-span-4 grid grid-cols-2 md:grid-cols-3 gap-6">

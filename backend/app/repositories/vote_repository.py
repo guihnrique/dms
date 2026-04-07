@@ -51,3 +51,23 @@ class VoteRepository:
             await self.db.commit()
             await self.db.refresh(vote)
             return vote
+
+    async def get_user_votes_for_reviews(
+        self,
+        user_id: int,
+        review_ids: list[UUID]
+    ) -> dict[UUID, str]:
+        """Get user's votes for multiple reviews"""
+        if not review_ids:
+            return {}
+
+        stmt = select(ReviewVote).where(
+            and_(
+                ReviewVote.user_id == user_id,
+                ReviewVote.review_id.in_(review_ids)
+            )
+        )
+        result = await self.db.execute(stmt)
+        votes = result.scalars().all()
+
+        return {vote.review_id: vote.vote_type for vote in votes}

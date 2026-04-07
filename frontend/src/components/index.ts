@@ -27,3 +27,5 @@ export type { CarouselProps } from './Carousel';
 
 export { Sidebar } from './Sidebar';
 export { TopBar } from './TopBar';
+export { AddToPlaylistModal } from './AddToPlaylistModal';
+export { ConfirmModal } from './ConfirmModal';

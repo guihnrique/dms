@@ -3,7 +3,7 @@
  * Sidebar navigation + main content area
  */
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Sidebar } from './components';
 import { AuthProvider } from './context/AuthContext';
 import {
@@ -13,6 +13,7 @@ import {
   LoginPage,
   LibraryPage,
   PlaylistsPage,
+  PlaylistDetailPage,
   RecommendationsPage,
   ArtistsListPage,
   ArtistProfilePage,
@@ -20,6 +21,7 @@ import {
   AlbumDetailPage,
   SongDetailPage,
   CreateReviewPage,
+  FavoriteSongsPage,
 } from './pages';
 
 function AppContent() {
@@ -37,6 +39,7 @@ function AppContent() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/library" element={<LibraryPage />} />
           <Route path="/playlists" element={<PlaylistsPage />} />
+          <Route path="/playlists/:id" element={<PlaylistDetailPage />} />
           <Route path="/recommendations" element={<RecommendationsPage />} />
           <Route path="/artists" element={<ArtistsListPage />} />
           <Route path="/artists/:id" element={<ArtistProfilePage />} />
@@ -44,6 +47,8 @@ function AppContent() {
           <Route path="/albums/:id" element={<AlbumDetailPage />} />
           <Route path="/songs/:id" element={<SongDetailPage />} />
           <Route path="/songs/:id/review" element={<CreateReviewPage />} />
+          <Route path="/library/favorites" element={<FavoriteSongsPage />} />
+          <Route path="/favorites" element={<Navigate to="/library/favorites" replace />} />
         </Routes>
       </main>
     </div>

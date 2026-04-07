@@ -125,8 +125,8 @@ export const playlistsAPI = {
     return apiClient.delete(`/playlists/${id}`, { requiresAuth: true });
   },
 
-  async addSong(playlistId: number, songId: number): Promise<{ message: string }> {
-    return apiClient.post(`/playlists/${playlistId}/songs/${songId}`, null, {
+  async addSong(playlistId: number, songId: number): Promise<Playlist> {
+    return apiClient.post(`/playlists/${playlistId}/songs`, { song_id: songId }, {
       requiresAuth: true,
     });
   },
@@ -174,6 +174,14 @@ export const reviewsAPI = {
       { requiresAuth: true }
     );
   },
+
+  async checkVotes(reviewIds: string[]): Promise<Record<string, string>> {
+    return apiClient.post(
+      '/reviews/votes/check',
+      reviewIds,
+      { requiresAuth: true }
+    );
+  },
 };
 
 // Search API
@@ -218,5 +226,40 @@ export const recommendationsAPI = {
       { song_id: songId, action },
       { requiresAuth: true }
     );
+  },
+};
+
+// Favorites API
+export const favoritesAPI = {
+  async favoriteSong(songId: number): Promise<{ message: string; favorited: boolean }> {
+    return apiClient.post(`/api/v1/favorites/songs/${songId}`, {}, { requiresAuth: true });
+  },
+
+  async unfavoriteSong(songId: number): Promise<{ message: string; favorited: boolean }> {
+    return apiClient.delete(`/api/v1/favorites/songs/${songId}`, { requiresAuth: true });
+  },
+
+  async checkSongFavoriteStatus(songId: number): Promise<{ favorited: boolean }> {
+    return apiClient.get(`/api/v1/favorites/songs/${songId}/status`, { requiresAuth: true });
+  },
+
+  async favoriteAlbum(albumId: number): Promise<{ message: string; favorited: boolean }> {
+    return apiClient.post(`/api/v1/favorites/albums/${albumId}`, {}, { requiresAuth: true });
+  },
+
+  async unfavoriteAlbum(albumId: number): Promise<{ message: string; favorited: boolean }> {
+    return apiClient.delete(`/api/v1/favorites/albums/${albumId}`, { requiresAuth: true });
+  },
+
+  async checkAlbumFavoriteStatus(albumId: number): Promise<{ favorited: boolean }> {
+    return apiClient.get(`/api/v1/favorites/albums/${albumId}/status`, { requiresAuth: true });
+  },
+
+  async listFavoriteSongs(): Promise<{ items: any[]; total: number }> {
+    return apiClient.get('/api/v1/favorites/songs', { requiresAuth: true });
+  },
+
+  async listFavoriteAlbums(): Promise<{ items: any[]; total: number }> {
+    return apiClient.get('/api/v1/favorites/albums', { requiresAuth: true });
   },
 };

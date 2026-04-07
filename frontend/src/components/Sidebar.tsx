@@ -15,7 +15,12 @@ export function Sidebar({ className = '' }: SidebarProps) {
   const location = useLocation();
   const { user, logout } = useAuth();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => {
+    if (path === '/favorites') {
+      return location.pathname === '/favorites' || location.pathname === '/library/favorites';
+    }
+    return location.pathname === path;
+  };
 
   return (
     <aside

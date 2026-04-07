@@ -15,6 +15,7 @@ from app.models.user import User, UserRole
 from app.models.review import Review
 from app.services.review_service import ReviewService, VotingService
 from app.repositories.review_repository import ReviewRepository
+from app.repositories.vote_repository import VoteRepository
 from app.schemas.review import (
     ReviewCreateRequest,
     ReviewUpdateRequest,
@@ -197,6 +198,19 @@ async def vote_on_review(
     service = VotingService(db)
     await service.vote(current_user.id, review_id, request.vote_type)
     return {"message": "Vote recorded"}
+
+
+@router.post("/votes/check", status_code=status.HTTP_200_OK)
+async def check_votes(
+    review_ids: list[str],
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db)
+):
+    """Check user's votes for multiple reviews"""
+    vote_repo = VoteRepository(db)
+    review_uuids = [UUID(rid) for rid in review_ids]
+    votes = await vote_repo.get_user_votes_for_reviews(current_user.id, review_uuids)
+    return {str(k): v for k, v in votes.items()}
 
 
 # Admin endpoints

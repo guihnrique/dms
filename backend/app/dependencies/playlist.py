@@ -14,7 +14,7 @@ from app.repositories.playlist_repository import PlaylistRepository
 
 
 async def verify_playlist_ownership(
-    playlist_id: int,
+    id: int,
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db)
 ) -> Playlist:
@@ -22,7 +22,7 @@ async def verify_playlist_ownership(
     Verify playlist ownership
 
     Args:
-        playlist_id: Playlist ID from path
+        id: Playlist ID from path parameter
         current_user: Current authenticated user
         db: Database session
 
@@ -42,7 +42,7 @@ async def verify_playlist_ownership(
     """
     # Get playlist
     repo = PlaylistRepository(db)
-    playlist = await repo.get_by_id(playlist_id)
+    playlist = await repo.get_by_id(id)
 
     if not playlist:
         raise HTTPException(status_code=404, detail="Playlist not found")

@@ -121,6 +121,7 @@ class PlaylistSongRepository:
                 Song.id.label('song_id'),
                 Song.title.label('song_title'),
                 Artist.name.label('artist_name'),
+                Album.id.label('album_id'),
                 Album.title.label('album_title'),
                 Song.duration_seconds
             )
@@ -146,6 +147,7 @@ class PlaylistSongRepository:
                 'song_id': row.song_id,
                 'song_title': row.song_title,
                 'artist_name': row.artist_name,
+                'album_id': row.album_id,
                 'album_title': row.album_title,
                 'duration_seconds': row.duration_seconds
             })

@@ -103,12 +103,14 @@ export interface Playlist {
 }
 
 export interface PlaylistSong {
-  id: number;
+  playlist_song_id: number;
+  position: number;
   song_id: number;
   song_title: string;
   artist_name: string;
+  album_id: number;
+  album_title: string;
   duration_seconds: number;
-  position: number;
 }
 
 export interface PlaylistListResponse {

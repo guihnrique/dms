@@ -4,7 +4,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Button, Icon, Layout } from '../components';
+import { Card, Button, Icon, Layout, AddToPlaylistModal } from '../components';
 import { useAuth } from '../context/AuthContext';
 import { recommendationsAPI } from '../api/services';
 import type { RecommendedSong } from '../api/types';
@@ -13,6 +13,8 @@ export function RecommendationsPage() {
   const { user } = useAuth();
   const [recommendations, setRecommendations] = useState<RecommendedSong[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false);
+  const [selectedSongId, setSelectedSongId] = useState<number | null>(null);
 
   useEffect(() => {
     if (user) {
@@ -170,7 +172,11 @@ export function RecommendationsPage() {
                     <Button
                       variant="primary"
                       size="sm"
-                      onClick={() => handleFeedback(rec.song_id, 'accepted')}
+                      onClick={() => {
+                        setSelectedSongId(rec.song_id);
+                        setShowPlaylistModal(true);
+                        handleFeedback(rec.song_id, 'accepted');
+                      }}
                     >
                       <Icon name="add" size="sm" className="mr-1" />
                       Add to Playlist
@@ -190,6 +196,21 @@ export function RecommendationsPage() {
           </Layout.Grid>
         )}
       </div>
+
+      {/* Add to Playlist Modal */}
+      {selectedSongId && (
+        <AddToPlaylistModal
+          songId={selectedSongId}
+          isOpen={showPlaylistModal}
+          onClose={() => {
+            setShowPlaylistModal(false);
+            setSelectedSongId(null);
+          }}
+          onSuccess={() => {
+            console.log('Added to playlist successfully');
+          }}
+        />
+      )}
     </Layout.Container>
   );
 }
