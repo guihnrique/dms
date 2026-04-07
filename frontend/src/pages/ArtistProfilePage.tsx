@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
 import { useAuth } from '../context/AuthContext';
@@ -207,9 +207,12 @@ export function ArtistProfilePage() {
               <h2 className="text-3xl font-headline font-bold tracking-tight">
                 Músicas Mais Populares
               </h2>
-              <button className="text-secondary text-sm font-bold hover:underline">
+              <Link
+                to={`/search?q=${encodeURIComponent(artist?.name || '')}`}
+                className="text-secondary text-sm font-bold hover:underline"
+              >
                 Ver todas
-              </button>
+              </Link>
             </div>
 
             <div className="space-y-1">
