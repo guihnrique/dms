@@ -103,9 +103,9 @@ export function ArtistsListPage() {
                   className="group"
                 >
                   <div className="relative aspect-square rounded-2xl bg-surface-container overflow-hidden mb-3 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-primary/20">
-                    {artist.image_url ? (
+                    {artist.photo_url ? (
                       <img
-                        src={artist.image_url}
+                        src={artist.photo_url}
                         alt={artist.name}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />

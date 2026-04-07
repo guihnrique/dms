@@ -206,10 +206,14 @@ async def quick_seed():
                             title=album_data['title'],
                             artist_id=artist.id,
                             release_year=album_data['year'],
-                            genre=data['genre']
+                            genre=data['genre'],
+                            album_cover_url=None  # Will be set after flush to use album.id
                         )
                         session.add(album)
                         await session.flush()
+
+                        # Set cover URL using album ID for consistent placeholder images
+                        album.album_cover_url = f"https://picsum.photos/seed/{album.id}/640/640"
                         print(f"  💿 Added album: {album.title} ({album.release_year})")
 
                         # Add songs
