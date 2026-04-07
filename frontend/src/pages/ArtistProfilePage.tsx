@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
 import { useAuth } from '../context/AuthContext';
