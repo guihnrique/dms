@@ -146,14 +146,22 @@ export function SearchPage() {
                       className="group"
                     >
                       <div className="aspect-square rounded-2xl bg-surface-container overflow-hidden mb-3 group-hover:scale-105 transition-transform">
-                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-dim/20 to-secondary/20">
-                          <Icon
-                            name="person"
-                            size="xl"
-                            className="text-primary"
-                            decorative
+                        {artist.photo_url ? (
+                          <img
+                            src={artist.photo_url}
+                            alt={artist.name}
+                            className="w-full h-full object-cover"
                           />
-                        </div>
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-dim/20 to-secondary/20">
+                            <Icon
+                              name="person"
+                              size="xl"
+                              className="text-primary"
+                              decorative
+                            />
+                          </div>
+                        )}
                       </div>
                       <h3 className="font-bold text-white truncate">
                         {artist.name}

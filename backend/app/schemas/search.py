@@ -70,6 +70,7 @@ class ArtistResult(BaseModel):
     """Artist search result"""
     id: int
     name: str
+    photo_url: Optional[str] = None
     relevance_score: int = Field(..., ge=0, le=100, description="Relevance score 0-100")
     albums_count: int = Field(default=0, description="Number of albums")
 
@@ -82,6 +83,7 @@ class AlbumResult(BaseModel):
     artist_name: str
     release_year: Optional[int]
     genre: Optional[str]
+    cover_art_url: Optional[str] = None
     relevance_score: int = Field(..., ge=0, le=100, description="Relevance score 0-100")
 
 

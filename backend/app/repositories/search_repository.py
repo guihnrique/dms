@@ -49,6 +49,7 @@ class SearchRepository:
             select(
                 Artist.id,
                 Artist.name,
+                Artist.photo_url,
                 relevance_score.label("relevance_score"),
                 albums_count_subquery.label("albums_count")
             )
@@ -64,6 +65,7 @@ class SearchRepository:
             {
                 "id": row.id,
                 "name": row.name,
+                "photo_url": row.photo_url,
                 "relevance_score": row.relevance_score,
                 "albums_count": row.albums_count or 0
             }
@@ -99,6 +101,7 @@ class SearchRepository:
                 Artist.name.label("artist_name"),
                 Album.release_year,
                 Album.genre,
+                Album.album_cover_url.label("cover_art_url"),
                 relevance_score.label("relevance_score")
             )
             .join(Artist, Album.artist_id == Artist.id)
@@ -128,6 +131,7 @@ class SearchRepository:
                 "artist_name": row.artist_name,
                 "release_year": row.release_year,
                 "genre": row.genre,
+                "cover_art_url": row.cover_art_url,
                 "relevance_score": row.relevance_score
             }
             for row in rows
