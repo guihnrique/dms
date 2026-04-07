@@ -19,6 +19,8 @@ export function ArtistProfilePage() {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [topSongs, setTopSongs] = useState<Song[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showAllSongs, setShowAllSongs] = useState(false);
+  const [allSongsLoading, setAllSongsLoading] = useState(false);
   const [songFavorites, setSongFavorites] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
@@ -94,6 +96,22 @@ export function ArtistProfilePage() {
       }
     } catch (err) {
       console.error('Failed to toggle song favorite:', err);
+    }
+  }
+
+  async function loadAllSongs() {
+    if (!id || allSongsLoading) return;
+
+    try {
+      setAllSongsLoading(true);
+      const songsData = await songsAPI.list(1, 100, undefined, Number(id));
+      setTopSongs(songsData.items);
+      await loadSongFavorites(songsData.items.map(s => s.id));
+      setShowAllSongs(true);
+    } catch (err) {
+      console.error('Failed to load all songs:', err);
+    } finally {
+      setAllSongsLoading(false);
     }
   }
 
@@ -205,14 +223,24 @@ export function ArtistProfilePage() {
           <div className="xl:col-span-2 space-y-8">
             <div className="flex justify-between items-end">
               <h2 className="text-3xl font-headline font-bold tracking-tight">
-                Músicas Mais Populares
+                {showAllSongs ? 'Todas as Músicas' : 'Músicas Mais Populares'}
               </h2>
-              <Link
-                to={`/search?q=${encodeURIComponent(artist?.name || '')}`}
-                className="text-secondary text-sm font-bold hover:underline"
-              >
-                Ver todas
-              </Link>
+              {!showAllSongs && (
+                <button
+                  onClick={loadAllSongs}
+                  disabled={allSongsLoading}
+                  className="text-secondary text-sm font-bold hover:underline disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                >
+                  {allSongsLoading ? (
+                    <>
+                      <Icon name="refresh" size="sm" className="animate-spin" decorative />
+                      Carregando...
+                    </>
+                  ) : (
+                    'Ver todas'
+                  )}
+                </button>
+              )}
             </div>
 
             <div className="space-y-1">
