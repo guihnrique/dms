@@ -131,9 +131,9 @@ export function CreateReviewPage() {
               Escrever Avaliação
             </h1>
             <div className="flex items-center gap-4">
-              {song.album?.cover_art_url && (
+              {song.cover_art_url && (
                 <img
-                  src={song.album.cover_art_url}
+                  src={song.cover_art_url}
                   alt={song.title}
                   className="w-16 h-16 rounded-xl object-cover"
                 />
@@ -141,8 +141,8 @@ export function CreateReviewPage() {
               <div>
                 <p className="font-bold text-white text-lg">{song.title}</p>
                 <p className="text-on-surface-variant">
-                  {song.album?.artist?.name}
-                  {song.album && ` · ${song.album.title}`}
+                  {song.artist_name}
+                  {song.album_title && ` · ${song.album_title}`}
                 </p>
               </div>
             </div>
