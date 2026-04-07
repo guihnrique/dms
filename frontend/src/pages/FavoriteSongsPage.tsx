@@ -17,6 +17,7 @@ interface FavoriteSong {
   album_id: number;
   duration_seconds: number;
   genre?: string;
+  cover_art_url?: string;
 }
 
 export function FavoriteSongsPage() {
