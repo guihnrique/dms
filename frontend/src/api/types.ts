@@ -6,6 +6,7 @@
 export interface User {
   id: number;
   email: string;
+  username?: string;
   role: 'USER' | 'ADMIN';
   created_at: string;
 }
@@ -177,6 +178,7 @@ export interface AlbumResult {
   artist_name: string;
   release_year?: number;
   genre?: string;
+  cover_art_url?: string;
   relevance_score: number;
 }
 
@@ -208,4 +210,18 @@ export interface RecommendedSong {
   average_rating?: number;
   score: number;
   reason: string;
+}
+
+// Favorites
+export interface FavoriteSong {
+  song_id: number;
+  title: string;
+  artist_name: string;
+  album_title: string;
+  album_id: number;
+  duration_seconds: number;
+  genre?: string;
+  cover_art_url?: string;
+  average_rating?: number;
+  review_count?: number;
 }

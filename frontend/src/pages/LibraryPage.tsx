@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
 import { useAuth } from '../context/AuthContext';
-import { playlistsAPI, albumsAPI, favoritesAPI } from '../api/services';
+import { playlistsAPI, favoritesAPI } from '../api/services';
 import type { Playlist, Album } from '../api/types';
 
 export function LibraryPage() {

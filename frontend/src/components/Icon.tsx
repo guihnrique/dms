@@ -9,7 +9,7 @@ export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
   name: string;
 
   /** Icon size */
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
 
   /** Optional ARIA label for semantic icons */
   'aria-label'?: string;
@@ -30,6 +30,7 @@ export const Icon: React.FC<IconProps> = ({
     sm: 'text-base',  // 16px
     md: 'text-2xl',   // 24px
     lg: 'text-4xl',   // 32px
+    xl: 'text-6xl',   // 48px
   };
 
   return (

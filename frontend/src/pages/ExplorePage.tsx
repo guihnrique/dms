@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
-import { albumsAPI, searchAPI } from '../api/services';
+import { albumsAPI } from '../api/services';
 import type { Album } from '../api/types';
 
 export function ExplorePage() {

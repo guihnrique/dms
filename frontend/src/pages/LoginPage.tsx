@@ -4,7 +4,7 @@
 
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Card, Button, Input, Layout } from '../components';
+import { Card, Button, Input } from '../components';
 import { useAuth } from '../context/AuthContext';
 
 export function LoginPage() {

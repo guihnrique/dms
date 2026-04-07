@@ -7,7 +7,7 @@ import {
   useContext,
   useState,
   useEffect,
-  ReactNode,
+  type ReactNode,
 } from 'react';
 import { authAPI } from '../api/services';
 import type { User, LoginRequest, RegisterRequest } from '../api/types';

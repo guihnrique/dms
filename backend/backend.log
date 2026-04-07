@@ -1,162 +1,1435 @@
-INFO:     Started server process [30228]
+INFO:     Will watch for changes in these directories: ['/Users/guilhermehf/SDD/DMS/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [48330] using WatchFiles
+INFO:     Started server process [48332]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:51764 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51769 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51781 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51783 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51784 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51786 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51781 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51788 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51784 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51789 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51789 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51784 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51788 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51781 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51786 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51783 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51783 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51786 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51781 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51788 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51783 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51781 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51793 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51793 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51797 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51798 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51800 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51793 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51802 - "OPTIONS /search?q=ac HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51802 - "OPTIONS /search?q=ac HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51803 - "OPTIONS /search?q=back HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51803 - "OPTIONS /search?q=back HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51803 - "OPTIONS /search?q=back HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51803 - "OPTIONS /search?q=back HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51803 - "OPTIONS /search?q=back HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51803 - "OPTIONS /search?q=back HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51803 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51806 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51807 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51810 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51803 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51812 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51859 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51861 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51862 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51862 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51861 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51859 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51886 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51886 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51889 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51891 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51886 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51892 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51895 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51896 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51896 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51895 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51892 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51886 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51891 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51889 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51896 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51895 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51914 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51914 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51916 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51914 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51918 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51921 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51923 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51924 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51924 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51923 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51921 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51918 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51914 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51916 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51924 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51921 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51986 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51986 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51989 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51991 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51993 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51986 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51995 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:51989 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52006 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52011 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52031 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52033 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52035 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52037 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52031 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52039 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52035 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52033 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52033 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52035 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52039 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52031 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52037 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52040 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52033 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52035 - "OPTIONS /auth/me HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52035 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52033 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52047 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52048 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52048 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52048 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52047 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52051 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52052 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52054 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52056 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52059 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52061 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52063 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52056 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52065 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52065 - "OPTIONS /search?q=back HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52095 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52095 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52098 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52100 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52102 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52095 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52103 - "OPTIONS /auth/register HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52103 - "OPTIONS /auth/register HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52136 - "OPTIONS /auth/register HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52253 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52256 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52258 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52260 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52253 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52262 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52262 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52253 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52253 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52253 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52262 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52263 - "OPTIONS /artists?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52253 - "OPTIONS /albums?page=1&page_size=6 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52265 - "OPTIONS /songs?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52265 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52253 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52267 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52267 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52269 - "OPTIONS /auth/register HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52290 - "OPTIONS /auth/register HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52643 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52645 - "OPTIONS /albums?page=1&page_size=10 HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:52873 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52875 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52877 - "GET /api/v1/albums/132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52880 - "GET /api/v1/songs/253 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52893 - "GET /api/v1/artists/195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52896 - "GET /api/v1/albums?page=1&page_size=8&artist_id=195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52899 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52896 - "GET /api/v1/albums?page=1&page_size=8&artist_id=195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52899 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52898 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52893 - "GET /api/v1/artists/195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52898 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52915 - "GET /api/v1/artists/195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52921 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52920 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52918 - "GET /api/v1/albums?page=1&page_size=8&artist_id=195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52915 - "GET /api/v1/artists/195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52918 - "GET /api/v1/albums?page=1&page_size=8&artist_id=195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52920 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52921 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52932 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52934 - "GET /api/v1/albums/132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52936 - "GET /api/v1/songs/253 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52956 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52950 - "GET /api/v1/artists/195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52956 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52953 - "GET /api/v1/albums?page=1&page_size=8&artist_id=195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52955 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52950 - "GET /api/v1/artists/195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52955 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52953 - "GET /api/v1/albums?page=1&page_size=8&artist_id=195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52963 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52962 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52963 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52962 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52963 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52962 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52963 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52963 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52962 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52963 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52962 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52963 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52962 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52963 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52967 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52969 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52965 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52967 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52965 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52969 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52965 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52969 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52965 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52969 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52960 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52978 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52978 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/v1/favorites/albums/133/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/albums/133 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/v1/favorites/albums/133/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52978 - "GET /api/v1/songs?page=1&page_size=20&album_id=133 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/albums/133 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/v1/favorites/songs/262/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52985 - "GET /api/v1/favorites/songs/264/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/favorites/songs/265/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52978 - "GET /api/v1/songs?page=1&page_size=20&album_id=133 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/v1/favorites/songs/266/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/favorites/songs/263/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52978 - "GET /api/v1/favorites/songs/261/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/v1/favorites/songs/260/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/favorites/songs/262/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52978 - "GET /api/v1/favorites/songs/264/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/v1/favorites/songs/265/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/favorites/songs/266/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52978 - "GET /api/v1/favorites/songs/263/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52981 - "GET /api/v1/favorites/songs/261/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52982 - "GET /api/v1/favorites/songs/260/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52987 - "GET /api/v1/favorites/songs/259/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52988 - "GET /api/v1/favorites/songs/258/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52987 - "GET /api/v1/favorites/songs/259/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52985 - "GET /api/v1/favorites/songs/267/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52988 - "GET /api/v1/favorites/songs/258/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52985 - "GET /api/v1/favorites/songs/267/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52987 - "GET /reviews/songs/262/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52987 - "GET /reviews/songs/262/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52987 - "GET /api/v1/artists/195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52988 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52985 - "GET /api/v1/albums?page=1&page_size=8&artist_id=195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52987 - "GET /api/v1/artists/195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52985 - "GET /api/v1/albums?page=1&page_size=8&artist_id=195 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52988 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/albums/132/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52993 - "GET /api/v1/albums/132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/albums/132/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52996 - "GET /api/v1/songs?page=1&page_size=20&album_id=132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52993 - "GET /api/v1/albums/132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52993 - "GET /api/v1/favorites/songs/252/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/257/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52993 - "GET /api/v1/favorites/songs/256/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52996 - "GET /api/v1/songs?page=1&page_size=20&album_id=132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/249/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52993 - "GET /api/v1/favorites/songs/250/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52996 - "GET /api/v1/favorites/songs/254/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52993 - "GET /api/v1/favorites/songs/252/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52996 - "GET /api/v1/favorites/songs/257/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/256/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52993 - "GET /api/v1/favorites/songs/249/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52996 - "GET /api/v1/favorites/songs/250/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53002 - "GET /api/v1/favorites/songs/255/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/254/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53003 - "GET /api/v1/favorites/songs/248/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53000 - "GET /api/v1/favorites/songs/251/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53002 - "GET /api/v1/favorites/songs/255/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53003 - "GET /api/v1/favorites/songs/251/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53000 - "GET /api/v1/favorites/songs/248/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /reviews/songs/253/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /reviews/songs/253/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53009 - "OPTIONS /api/v1/songs/253 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53011 - "OPTIONS /reviews/songs/253/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53014 - "OPTIONS /api/v1/songs/253 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53015 - "OPTIONS /reviews/songs/253/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/songs/253 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53019 - "GET /reviews/songs/253/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53019 - "GET /reviews/songs/253/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/songs/253 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/albums/132/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/albums/132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/albums/132/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53019 - "GET /api/v1/songs?page=1&page_size=20&album_id=132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/albums/132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /api/v1/favorites/songs/251/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/favorites/songs/252/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53019 - "GET /api/v1/songs?page=1&page_size=20&album_id=132 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/favorites/songs/249/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53019 - "GET /api/v1/favorites/songs/254/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/favorites/songs/250/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53019 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/favorites/songs/251/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53024 - "GET /api/v1/favorites/songs/255/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53019 - "GET /api/v1/favorites/songs/252/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53025 - "GET /api/v1/favorites/songs/248/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/favorites/songs/249/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/257/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53024 - "GET /api/v1/favorites/songs/254/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /api/v1/favorites/songs/256/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53025 - "GET /api/v1/favorites/songs/255/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53019 - "GET /api/v1/favorites/songs/250/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/favorites/songs/248/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /api/v1/favorites/songs/257/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53024 - "GET /reviews/songs/253/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /api/v1/favorites/songs/256/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /reviews/songs/253/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53031 - "OPTIONS /api/v1/favorites/songs/253 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "POST /api/v1/favorites/songs/253 HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53031 - "OPTIONS /api/v1/favorites/songs/251 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "POST /api/v1/favorites/songs/251 HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53021 - "GET /playlists/me?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /playlists/me?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53033 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53037 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53036 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53037 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53033 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53040 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53037 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53036 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53040 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53037 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53036 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53040 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53037 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53036 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53040 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53037 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53043 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53042 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53033 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53043 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53042 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53033 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53037 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53037 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53070 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 854, in _start_transaction
+    self._transaction = self._connection.transaction(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/asyncpg/connection.py", line 303, in transaction
+    self._check_open()
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/asyncpg/connection.py", line 1534, in _check_open
+    raise exceptions.InterfaceError('connection is closed')
+asyncpg.exceptions._base.InterfaceError: connection is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 527, in _prepare_and_execute
+    await adapt_connection._start_transaction()
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 861, in _start_transaction
+    self._handle_exception(error)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.InterfaceError: <class 'asyncpg.exceptions._base.InterfaceError'>: connection is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/uvicorn/protocols/http/httptools_impl.py", line 426, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 146, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/guilhermehf/SDD/DMS/backend/app/routers/albums.py", line 72, in list_albums
+    result = await service.list_albums(page=page, page_size=page_size, artist_id=artist_id)
+  File "/Users/guilhermehf/SDD/DMS/backend/app/services/album_service.py", line 91, in list_albums
+    items, total = await self.album_repo.list_paginated(page=page, page_size=page_size, artist_id=artist_id)
+  File "/Users/guilhermehf/SDD/DMS/backend/app/repositories/album_repository.py", line 76, in list_paginated
+    result = await self.db.execute(query)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/ext/asyncio/session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 527, in _prepare_and_execute
+    await adapt_connection._start_transaction()
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 861, in _start_transaction
+    self._handle_exception(error)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.InterfaceError: (sqlalchemy.dialects.postgresql.asyncpg.InterfaceError) <class 'asyncpg.exceptions._base.InterfaceError'>: connection is closed
+[SQL: SELECT albums.id, albums.title, albums.artist_id, albums.release_year, albums.album_cover_url, albums.genre, albums.created_at, albums.updated_at 
+FROM albums ORDER BY albums.release_year DESC, albums.title ASC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (50, 0)]
+(Background on this error at: https://sqlalche.me/e/20/rvf5)
+INFO:     127.0.0.1:53072 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53082 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53082 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53081 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53081 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53090 - "OPTIONS /playlists/39/songs/67 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "DELETE /playlists/39/songs/67 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53094 - "OPTIONS /playlists/39/songs/68 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "DELETE /playlists/39/songs/68 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53097 - "OPTIONS /playlists/39/songs/69 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "DELETE /playlists/39/songs/69 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "DELETE /api/v1/favorites/songs/251 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "DELETE /api/v1/favorites/songs/253 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "DELETE /api/v1/favorites/songs/278 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53101 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53100 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53101 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53100 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53101 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53101 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53100 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53104 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53101 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53104 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53101 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53104 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53100 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53104 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53100 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53101 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53104 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53107 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53106 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53106 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53107 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53104 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53113 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53115 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53116 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53113 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53116 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53115 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53119 - "GET /api/v1/songs/253 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53122 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53122 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53122 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53122 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53122 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53128 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53122 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53122 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53126 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53122 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53125 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53131 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53132 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53131 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53128 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53132 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53128 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53131 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53131 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53145 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53142 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53144 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53142 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53145 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53148 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53144 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53142 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53150 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53151 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53148 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53148 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53187 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53183 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53186 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53187 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53185 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53187 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53183 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53185 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53185 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53186 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53220 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53221 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53218 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53220 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53221 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53218 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53218 - "GET /playlists/me?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53225 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53218 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53225 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53218 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53224 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53218 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53225 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53228 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53224 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53218 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53224 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53218 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53224 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53218 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53231 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53230 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53231 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53228 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53230 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53225 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53230 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53225 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53228 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53228 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53260 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53259 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53260 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53256 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53259 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53254 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53259 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53254 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53256 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53256 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53279 - "GET /playlists/me?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53279 - "GET /playlists/me?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53285 - "GET /playlists/me?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53289 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53291 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53292 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53289 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53291 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53292 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53295 - "OPTIONS /api/v1/albums/134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53295 - "OPTIONS /api/v1/songs?page=1&page_size=20&album_id=134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53299 - "OPTIONS /api/v1/favorites/albums/134/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53295 - "OPTIONS /api/v1/songs?page=1&page_size=20&album_id=134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53302 - "OPTIONS /api/v1/favorites/albums/134/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/albums/134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53307 - "GET /api/v1/favorites/albums/134/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53305 - "GET /api/v1/songs?page=1&page_size=20&album_id=134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53302 - "OPTIONS /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53307 - "GET /api/v1/favorites/albums/134/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53295 - "OPTIONS /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53299 - "OPTIONS /api/v1/favorites/songs/273/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53303 - "OPTIONS /api/v1/favorites/songs/275/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53309 - "OPTIONS /api/v1/favorites/songs/269/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53311 - "OPTIONS /api/v1/favorites/songs/274/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53302 - "OPTIONS /api/v1/favorites/songs/276/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53299 - "OPTIONS /api/v1/favorites/songs/270/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53295 - "OPTIONS /api/v1/favorites/songs/271/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/albums/134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53307 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/favorites/songs/269/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53307 - "GET /api/v1/favorites/songs/274/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/favorites/songs/276/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53305 - "GET /api/v1/songs?page=1&page_size=20&album_id=134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53307 - "GET /api/v1/favorites/songs/270/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/favorites/songs/271/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53305 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53307 - "GET /api/v1/favorites/songs/269/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/favorites/songs/274/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53305 - "GET /api/v1/favorites/songs/276/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53307 - "GET /api/v1/favorites/songs/270/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/favorites/songs/271/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53315 - "GET /api/v1/favorites/songs/273/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53316 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53317 - "GET /api/v1/favorites/songs/275/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53295 - "OPTIONS /reviews/songs/268/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53315 - "GET /api/v1/favorites/songs/273/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53316 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53317 - "GET /api/v1/favorites/songs/275/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /reviews/songs/268/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /reviews/songs/268/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53295 - "OPTIONS /api/v1/songs/268 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53295 - "OPTIONS /reviews/songs/268/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53322 - "OPTIONS /reviews/songs/268/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53325 - "OPTIONS /api/v1/songs/268 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53316 - "GET /reviews/songs/268/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53317 - "GET /api/v1/songs/268 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53316 - "GET /reviews/songs/268/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53317 - "GET /api/v1/songs/268 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53328 - "GET /playlists/me?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /api/v1/albums/134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53334 - "GET /api/v1/favorites/albums/134/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53333 - "GET /api/v1/songs?page=1&page_size=20&album_id=134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53334 - "GET /api/v1/favorites/albums/134/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /api/v1/albums/134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53336 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53334 - "GET /api/v1/favorites/songs/275/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53333 - "GET /api/v1/songs?page=1&page_size=20&album_id=134 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /api/v1/favorites/songs/269/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53334 - "GET /api/v1/favorites/songs/276/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53333 - "GET /api/v1/favorites/songs/270/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /api/v1/favorites/songs/271/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53334 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53333 - "GET /api/v1/favorites/songs/275/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /api/v1/favorites/songs/269/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53334 - "GET /api/v1/favorites/songs/276/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53333 - "GET /api/v1/favorites/songs/270/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /api/v1/favorites/songs/271/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /api/v1/favorites/songs/273/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53339 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /api/v1/favorites/songs/273/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53336 - "GET /api/v1/favorites/songs/274/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53339 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53336 - "GET /api/v1/favorites/songs/274/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /reviews/songs/268/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /reviews/songs/268/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /playlists/me?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "POST /playlists/39/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /playlists/39 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53349 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53345 - "GET /api/v1/songs/268 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "GET /reviews/songs/268/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53349 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53345 - "GET /api/v1/songs/268 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "GET /reviews/songs/268/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53351 - "OPTIONS /api/v1/favorites/songs/268 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "POST /api/v1/favorites/songs/268 HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53347 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "DELETE /api/v1/favorites/songs/268 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53354 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53354 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53354 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53358 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53354 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53354 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53354 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53354 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53361 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53360 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53361 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53360 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53358 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53358 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53347 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53360 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53360 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53368 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53370 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53371 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53368 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53370 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53371 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53385 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53387 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53388 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53410 - "OPTIONS /api/v1/songs/307 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53411 - "OPTIONS /reviews/songs/307/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53413 - "OPTIONS /api/v1/favorites/songs/307/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53415 - "OPTIONS /api/v1/songs/307 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53417 - "OPTIONS /reviews/songs/307/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53418 - "OPTIONS /api/v1/favorites/songs/307/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /reviews/songs/307/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "GET /api/v1/favorites/songs/307/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53420 - "GET /api/v1/songs/307 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "GET /api/v1/favorites/songs/307/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /reviews/songs/307/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53420 - "GET /api/v1/songs/307 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53420 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53418 - "OPTIONS /api/v1/favorites/songs/292/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53417 - "OPTIONS /api/v1/favorites/songs/302/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53420 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53420 - "GET /api/v1/favorites/songs/292/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/v1/favorites/songs/302/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53420 - "GET /api/v1/favorites/songs/292/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/v1/favorites/songs/302/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53427 - "GET /api/v1/favorites/songs/307/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53430 - "GET /api/v1/favorites/songs/262/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53427 - "GET /api/v1/favorites/songs/307/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53430 - "GET /api/v1/favorites/songs/262/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53436 - "OPTIONS /api/v1/favorites/songs/307 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "POST /api/v1/favorites/songs/307 HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53436 - "OPTIONS /api/v1/favorites/songs/292 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "POST /api/v1/favorites/songs/292 HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53429 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53429 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53446 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53445 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53446 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53445 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53446 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53446 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53446 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53446 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53453 - "GET /api/v1/favorites/songs/307/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53440 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53446 - "GET /api/v1/favorites/songs/262/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53453 - "GET /api/v1/favorites/songs/302/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/v1/songs?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/v1/favorites/songs/307/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53446 - "GET /api/v1/favorites/songs/302/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53453 - "GET /api/v1/favorites/songs/262/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53455 - "GET /api/v1/favorites/songs/292/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53456 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53455 - "GET /api/v1/favorites/songs/292/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53456 - "GET /api/v1/favorites/songs/253/status HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/routers/songs.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [30228]
+INFO:     Finished server process [48332]
+INFO:     Started server process [55727]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/services/song_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [55727]
+INFO:     Started server process [55736]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:53463 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53466 - "OPTIONS /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53468 - "OPTIONS /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53470 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53463 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53470 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53468 - "OPTIONS /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53466 - "OPTIONS /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53468 - "OPTIONS /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53474 - "OPTIONS /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53470 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53477 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53463 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53477 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53463 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53470 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53474 - "OPTIONS /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53468 - "OPTIONS /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53470 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53481 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/uvicorn/protocols/http/httptools_impl.py", line 426, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 146, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/guilhermehf/SDD/DMS/backend/app/routers/songs.py", line 111, in list_songs
+    result = await service.list_songs(
+  File "/Users/guilhermehf/SDD/DMS/backend/app/services/song_service.py", line 118, in list_songs
+    items, total = await self.song_repo.list_paginated(
+TypeError: list_paginated() got an unexpected keyword argument 'artist_id'
+INFO:     127.0.0.1:53484 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/uvicorn/protocols/http/httptools_impl.py", line 426, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 146, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/guilhermehf/SDD/DMS/backend/app/routers/songs.py", line 111, in list_songs
+    result = await service.list_songs(
+  File "/Users/guilhermehf/SDD/DMS/backend/app/services/song_service.py", line 118, in list_songs
+    items, total = await self.song_repo.list_paginated(
+TypeError: list_paginated() got an unexpected keyword argument 'artist_id'
+INFO:     127.0.0.1:53470 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53482 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53463 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53482 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/repositories/song_repository.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for connections to close. (CTRL+C to force quit)
+INFO:     127.0.0.1:53463 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     Waiting for background tasks to complete. (CTRL+C to force quit)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [55736]
+INFO:     Started server process [55779]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:53495 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53497 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53496 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53497 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53495 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53496 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53495 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53496 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53495 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53496 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53495 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53505 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53506 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53503 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53497 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53496 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53495 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53505 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53496 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53495 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53503 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53497 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53506 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53506 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53522 - "OPTIONS /api/v1/songs?page=1&page_size=5&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53524 - "OPTIONS /api/v1/songs?page=1&page_size=5&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53519 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53526 - "GET /api/v1/songs?page=1&page_size=5&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53521 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53519 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53519 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53519 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53526 - "GET /api/v1/songs?page=1&page_size=5&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53521 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53521 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53526 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53529 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53531 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53529 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53531 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53537 - "OPTIONS /api/v1/favorites/songs/272 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "POST /api/v1/favorites/songs/272 HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53537 - "OPTIONS /api/v1/favorites/songs/277 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "POST /api/v1/favorites/songs/277 HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53537 - "OPTIONS /api/v1/favorites/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "POST /api/v1/favorites/songs/283 HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53540 - "OPTIONS /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53541 - "OPTIONS /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53544 - "OPTIONS /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53545 - "OPTIONS /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53549 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53548 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53549 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53548 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53555 - "OPTIONS /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53557 - "OPTIONS /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53559 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53562 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53559 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53562 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53564 - "OPTIONS /api/v1/songs/277 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53564 - "OPTIONS /reviews/songs/277/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53566 - "OPTIONS /reviews/songs/277/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53569 - "OPTIONS /api/v1/songs/277 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53562 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53572 - "GET /reviews/songs/277/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53562 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53559 - "GET /api/v1/songs/277 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53572 - "GET /reviews/songs/277/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53559 - "GET /api/v1/songs/277 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53574 - "GET /api/v1/songs/277 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53574 - "GET /api/v1/songs/277 HTTP/1.1" 200 OK
+better-profanity not installed, profanity filtering disabled
+INFO:     127.0.0.1:53574 - "POST /reviews HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53577 - "GET /reviews/songs/277/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53578 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53570 - "OPTIONS /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53574 - "GET /api/v1/songs/277 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53577 - "GET /reviews/songs/277/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53578 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53574 - "GET /api/v1/songs/277 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53578 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53570 - "OPTIONS /reviews/7f0d003f-702e-4fb7-a9bb-3d4e00f5d4ad/vote HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53580 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53578 - "POST /reviews/7f0d003f-702e-4fb7-a9bb-3d4e00f5d4ad/vote HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:53578 - "POST /reviews/7f0d003f-702e-4fb7-a9bb-3d4e00f5d4ad/vote HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:53583 - "OPTIONS /api/v1/auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53578 - "POST /api/v1/auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53583 - "OPTIONS /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53595 - "OPTIONS /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53583 - "OPTIONS /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53597 - "OPTIONS /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53599 - "OPTIONS /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53595 - "OPTIONS /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53602 - "OPTIONS /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53604 - "OPTIONS /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53610 - "GET /api/v1/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53610 - "GET /api/v1/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53603 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53608 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53607 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53603 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53608 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53607 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53617 - "OPTIONS /api/v1/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53612 - "POST /api/v1/auth/register HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:53619 - "POST /api/v1/auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53623 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53619 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53619 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53623 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53626 - "GET /api/v1/favorites/songs HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53626 - "GET /api/v1/favorites/songs HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53626 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53628 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53628 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53626 - "GET /api/v1/favorites/albums HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53630 - "GET /api/v1/favorites/songs HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53626 - "GET /api/v1/favorites/albums HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53628 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53630 - "GET /api/v1/favorites/songs HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53630 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53630 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53626 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53633 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53630 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53628 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53633 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53626 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53635 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53636 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53626 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53633 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53636 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53635 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53630 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53635 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53628 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53628 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53635 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53630 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53633 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53636 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53626 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53628 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53635 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53635 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53642 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53642 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53640 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53638 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53640 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53638 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53638 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53638 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53638 - "POST /reviews HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53638 - "POST /reviews HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53644 - "POST /reviews HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53644 - "GET /api/v1/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53644 - "GET /api/v1/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53655 - "OPTIONS /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53663 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53663 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53663 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53658 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53663 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53666 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53665 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53666 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53665 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53665 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53666 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53665 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53666 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53665 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+better-profanity not installed, profanity filtering disabled
+INFO:     127.0.0.1:53659 - "POST /reviews HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53673 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53672 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53673 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53672 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53659 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53675 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53675 - "POST /api/v1/auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53686 - "GET /api/v1/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53686 - "GET /api/v1/auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53673 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53672 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53685 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53673 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53672 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53685 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53691 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53692 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53692 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53691 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53691 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /api/v1/songs?page=1&page_size=5&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53692 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53691 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53691 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53691 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /api/v1/songs?page=1&page_size=5&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53692 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53692 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53695 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53698 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53697 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53695 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53698 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53697 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53695 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53698 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53697 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53695 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53698 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53697 - "GET /api/v1/songs/279 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53698 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53704 - "OPTIONS /reviews/f3d58ab7-a7a5-40e9-9f76-69dab9bd0078/vote HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "POST /reviews/f3d58ab7-a7a5-40e9-9f76-69dab9bd0078/vote HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53706 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53706 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53706 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53710 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53710 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53706 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53712 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53710 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53710 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53712 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53710 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53712 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53710 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53712 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53715 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53716 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53706 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53715 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53716 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53706 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53706 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53725 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53724 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53725 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53721 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53724 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53721 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53721 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53721 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+better-profanity not installed, profanity filtering disabled
+INFO:     127.0.0.1:53727 - "POST /reviews HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53730 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53727 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53733 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53730 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53727 - "GET /api/v1/songs/283 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53727 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53727 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53730 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53733 - "GET /api/v1/songs?page=1&page_size=5&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53727 - "GET /api/v1/artists/196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53727 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53730 - "GET /api/v1/albums?page=1&page_size=8&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53733 - "GET /api/v1/songs?page=1&page_size=5&artist_id=196 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53733 - "GET /api/v1/favorites/songs/268/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53730 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53737 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /api/v1/favorites/songs/272/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53737 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53730 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53737 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53730 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53737 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53737 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53737 - "GET /api/v1/favorites/songs/278/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/279/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53737 - "GET /api/v1/favorites/songs/282/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/favorites/songs/281/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53730 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53742 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53733 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53730 - "GET /api/v1/favorites/songs/284/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53742 - "GET /api/v1/favorites/songs/283/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53733 - "GET /api/v1/favorites/songs/277/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /api/v1/favorites/songs/280/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53742 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53733 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53742 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53733 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53742 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53742 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53738 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53771 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53771 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53770 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53766 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53770 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53768 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53766 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53770 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53770 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53768 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53768 - "GET /reviews/songs/279/reviews?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53768 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53791 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53791 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /api/v1/favorites/albums/135/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53788 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53788 - "GET /api/v1/songs?page=1&page_size=20&album_id=135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /reviews/songs/277/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53795 - "OPTIONS /reviews/songs/284/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /reviews/songs/284/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /reviews/songs/278/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53795 - "OPTIONS /reviews/songs/280/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /api/v1/albums/135 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /reviews/songs/279/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /reviews/songs/280/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53795 - "OPTIONS /reviews/songs/282/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /reviews/songs/277/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /reviews/songs/282/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53795 - "OPTIONS /reviews/songs/281/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /reviews/songs/283/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /reviews/songs/281/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /reviews/songs/284/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /reviews/songs/278/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /reviews/songs/280/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /reviews/songs/282/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /reviews/songs/281/reviews?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "POST /reviews/votes/check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53798 - "POST /reviews/7f0d003f-702e-4fb7-a9bb-3d4e00f5d4ad/vote HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:53800 - "OPTIONS /reviews/ff8df147-5df8-4c52-8e45-bdd1b3614716/vote HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53798 - "POST /reviews/ff8df147-5df8-4c52-8e45-bdd1b3614716/vote HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:53804 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53806 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53807 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53804 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53806 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53807 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /api/v1/albums?page=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53813 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53812 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53813 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53812 - "GET /api/v1/favorites/albums HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /playlists/me?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /api/v1/favorites/songs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /playlists/me?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53817 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53809 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53817 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54418 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 854, in _start_transaction
+    self._transaction = self._connection.transaction(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/asyncpg/connection.py", line 303, in transaction
+    self._check_open()
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/asyncpg/connection.py", line 1534, in _check_open
+    raise exceptions.InterfaceError('connection is closed')
+asyncpg.exceptions._base.InterfaceError: connection is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 527, in _prepare_and_execute
+    await adapt_connection._start_transaction()
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 861, in _start_transaction
+    self._handle_exception(error)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.InterfaceError: <class 'asyncpg.exceptions._base.InterfaceError'>: connection is closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/uvicorn/protocols/http/httptools_impl.py", line 426, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 146, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/guilhermehf/SDD/DMS/backend/app/routers/artists.py", line 118, in list_artists
+    items, total = await service.artist_repo.list_paginated(page=page, page_size=page_size)
+  File "/Users/guilhermehf/SDD/DMS/backend/app/repositories/artist_repository.py", line 131, in list_paginated
+    result = await self.db.execute(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/ext/asyncio/session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/orm/context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 527, in _prepare_and_execute
+    await adapt_connection._start_transaction()
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 861, in _start_transaction
+    self._handle_exception(error)
+  File "/Users/guilhermehf/SDD/DMS/backend/venv/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.InterfaceError: (sqlalchemy.dialects.postgresql.asyncpg.InterfaceError) <class 'asyncpg.exceptions._base.InterfaceError'>: connection is closed
+[SQL: SELECT artists.id, artists.name, artists.country, artists.photo_url, artists.created_at, artists.updated_at 
+FROM artists ORDER BY artists.name 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER]
+[parameters: (6, 0)]
+(Background on this error at: https://sqlalche.me/e/20/rvf5)
+INFO:     127.0.0.1:54422 - "GET /api/v1/artists?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54419 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54420 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54419 - "GET /api/v1/albums?page=1&page_size=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54420 - "GET /api/v1/songs?page=1&page_size=10 HTTP/1.1" 200 OK
