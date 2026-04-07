@@ -16,6 +16,7 @@ class ArtistResponse:
         self.id = artist.id
         self.name = artist.name
         self.country = artist.country
+        self.photo_url = artist.photo_url
         self.created_at = artist.created_at
         self.updated_at = artist.updated_at
         self.albums_count = albums_count

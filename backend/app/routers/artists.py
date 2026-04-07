@@ -55,6 +55,7 @@ async def create_artist(
             id=artist.id,
             name=artist.name,
             country=artist.country,
+            photo_url=artist.photo_url,
             albums_count=artist.albums_count,
             created_at=artist.created_at,
             updated_at=artist.updated_at
@@ -89,6 +90,7 @@ async def get_artist(
         id=artist.id,
         name=artist.name,
         country=artist.country,
+        photo_url=artist.photo_url,
         albums_count=artist.albums_count,
         created_at=artist.created_at,
         updated_at=artist.updated_at
@@ -126,6 +128,7 @@ async def list_artists(
                 id=artist.id,
                 name=artist.name,
                 country=artist.country,
+                photo_url=artist.photo_url,
                 albums_count=albums_count_map.get(artist.id, 0),
                 created_at=artist.created_at,
                 updated_at=artist.updated_at
@@ -223,6 +226,7 @@ async def update_artist(
             id=artist.id,
             name=artist.name,
             country=artist.country,
+            photo_url=artist.photo_url,
             albums_count=artist.albums_count,
             created_at=artist.created_at,
             updated_at=artist.updated_at

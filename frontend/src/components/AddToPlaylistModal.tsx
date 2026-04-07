@@ -8,7 +8,8 @@ import { playlistsAPI } from '../api/services';
 import type { Playlist } from '../api/types';
 
 interface AddToPlaylistModalProps {
-  songId: number;
+  songId?: number;
+  songIds?: number[];
   isOpen: boolean;
   onClose: () => void;
   onSuccess?: () => void;
@@ -16,6 +17,7 @@ interface AddToPlaylistModalProps {
 
 export function AddToPlaylistModal({
   songId,
+  songIds,
   isOpen,
   onClose,
   onSuccess,
@@ -49,9 +51,28 @@ export function AddToPlaylistModal({
     try {
       setAdding(playlistId);
       setError('');
-      console.log('Adding song', songId, 'to playlist', playlistId);
-      const result = await playlistsAPI.addSong(playlistId, songId);
-      console.log('Add to playlist result:', result);
+
+      // Determine which songs to add
+      let songsToAdd: number[] = [];
+
+      if (songIds && songIds.length > 0) {
+        songsToAdd = songIds;
+      } else if (songId !== undefined && songId !== null) {
+        songsToAdd = [songId];
+      } else {
+        console.error('No songs to add!');
+        setError('Nenhuma música selecionada');
+        return;
+      }
+
+      console.log('Adding songs', songsToAdd, 'to playlist', playlistId);
+
+      // Add all songs sequentially
+      for (const sid of songsToAdd) {
+        await playlistsAPI.addSong(playlistId, sid);
+      }
+
+      console.log('Successfully added all songs to playlist');
       onSuccess?.();
       onClose();
     } catch (err: any) {
@@ -89,9 +110,16 @@ export function AddToPlaylistModal({
       >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-outline-variant/10">
-          <h3 className="font-headline text-2xl font-bold text-white">
-            Adicionar à Playlist
-          </h3>
+          <div>
+            <h3 className="font-headline text-2xl font-bold text-white">
+              Adicionar à Playlist
+            </h3>
+            {songIds && songIds.length > 1 && (
+              <p className="text-sm text-on-surface-variant mt-1">
+                {songIds.length} músicas
+              </p>
+            )}
+          </div>
           <button
             onClick={onClose}
             className="w-10 h-10 rounded-full hover:bg-surface-bright flex items-center justify-center transition-colors"

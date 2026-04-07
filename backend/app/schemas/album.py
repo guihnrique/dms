@@ -46,14 +46,17 @@ class AlbumResponse(BaseModel):
     artist_id: int
     artist_name: Optional[str]
     release_year: int
-    album_cover_url: Optional[str]
+    cover_art_url: Optional[str] = Field(None, validation_alias='album_cover_url', serialization_alias='cover_art_url')
     genre: Optional[str]
     songs_count: int
     total_duration_seconds: int
     created_at: datetime
     updated_at: datetime
 
-    model_config = {"from_attributes": True}
+    model_config = {
+        "from_attributes": True,
+        "populate_by_name": True
+    }
 
 
 class PaginatedAlbumResponse(BaseModel):

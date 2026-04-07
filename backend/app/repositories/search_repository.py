@@ -163,6 +163,7 @@ class SearchRepository:
                 Artist.name.label("artist_name"),
                 Album.title.label("album_title"),
                 Song.genre,
+                Album.album_cover_url.label("cover_art_url"),
                 Song.average_rating,
                 Song.review_count,
                 relevance_score.label("relevance_score")
@@ -191,6 +192,7 @@ class SearchRepository:
                 "artist_name": row.artist_name,
                 "album_title": row.album_title,
                 "genre": row.genre,
+                "cover_art_url": row.cover_art_url,
                 "average_rating": row.average_rating,
                 "review_count": row.review_count,
                 "relevance_score": min(row.relevance_score, 100)  # Cap at 100

@@ -79,13 +79,15 @@ export const songsAPI = {
   async list(
     page = 1,
     pageSize = 20,
-    albumId?: number
+    albumId?: number,
+    artistId?: number
   ): Promise<SongListResponse> {
     const params = new URLSearchParams({
       page: page.toString(),
       page_size: pageSize.toString(),
     });
     if (albumId) params.append('album_id', albumId.toString());
+    if (artistId) params.append('artist_id', artistId.toString());
     return apiClient.get(`/api/v1/songs?${params}`);
   },
 

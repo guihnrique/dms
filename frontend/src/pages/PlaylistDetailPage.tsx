@@ -292,6 +292,21 @@ export function PlaylistDetailPage() {
                     />
                   </div>
 
+                  {/* Album Cover Thumbnail */}
+                  <Link to={`/songs/${song.song_id}`} className="flex-shrink-0">
+                    {song.cover_art_url ? (
+                      <img
+                        src={song.cover_art_url}
+                        alt={song.song_title}
+                        className="w-12 h-12 rounded-lg object-cover"
+                      />
+                    ) : (
+                      <div className="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+                        <Icon name="music_note" size="sm" className="text-on-surface-variant" decorative />
+                      </div>
+                    )}
+                  </Link>
+
                   <Link to={`/songs/${song.song_id}`} className="flex-1">
                     <h4 className="text-white font-bold hover:underline">{song.song_title}</h4>
                     <p className="text-xs text-on-surface-variant">

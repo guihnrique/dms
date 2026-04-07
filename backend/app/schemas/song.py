@@ -72,6 +72,7 @@ class SongResponse(BaseModel):
     duration_seconds: int
     genre: Optional[str]
     year: Optional[int]
+    cover_art_url: Optional[str] = None  # Album cover for convenience
     external_links: Optional[dict]
     deleted_at: Optional[datetime]
     created_at: datetime

@@ -118,6 +118,7 @@ class FavoriteRepository:
                 "album_id": song.album_id,
                 "duration_seconds": song.duration_seconds,
                 "genre": song.genre,
+                "cover_art_url": album.album_cover_url if album else None,
             })
 
         return favorites

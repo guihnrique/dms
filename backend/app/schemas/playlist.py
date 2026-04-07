@@ -120,6 +120,7 @@ class PlaylistSongResponse(BaseModel):
     album_id: int = Field(..., description="Album ID")
     album_title: str = Field(..., description="Album title")
     duration_seconds: int = Field(..., description="Song duration in seconds")
+    cover_art_url: Optional[str] = Field(None, description="Album cover art URL")
 
     class Config:
         from_attributes = True

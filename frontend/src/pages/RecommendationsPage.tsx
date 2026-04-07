@@ -129,17 +129,30 @@ export function RecommendationsPage() {
             {recommendations.map((rec) => (
               <Card key={rec.song_id} glass>
                 <Card.Content>
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
+                  <div className="flex gap-4 mb-4">
+                    {/* Album Cover */}
+                    {rec.cover_art_url ? (
+                      <img
+                        src={rec.cover_art_url}
+                        alt={rec.title}
+                        className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
+                      />
+                    ) : (
+                      <div className="w-20 h-20 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0">
+                        <Icon name="music_note" size="md" className="text-on-surface-variant" />
+                      </div>
+                    )}
+
+                    <div className="flex-1 min-w-0">
                       <Link
                         to={`/songs/${rec.song_id}`}
                         onClick={() => handleFeedback(rec.song_id, 'clicked')}
                       >
-                        <h3 className="font-headline text-xl mb-1 hover:text-primary transition-colors">
+                        <h3 className="font-headline text-xl mb-1 hover:text-primary transition-colors truncate">
                           {rec.title}
                         </h3>
                       </Link>
-                      <p className="text-sm text-on-surface-variant">
+                      <p className="text-sm text-on-surface-variant truncate">
                         {rec.artist_name} · {rec.album_title}
                       </p>
                       {rec.genre && (
@@ -148,8 +161,9 @@ export function RecommendationsPage() {
                         </p>
                       )}
                     </div>
-                    <div className="flex items-center gap-1 ml-4">
-                      <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center">
+
+                    <div className="flex items-center gap-1">
+                      <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
                         <span className="text-sm font-medium">{rec.score}</span>
                       </div>
                     </div>

@@ -69,6 +69,7 @@ class RecommendationService:
                             artist_name=song["artist_name"],
                             album_title=song["album_title"],
                             genre=song["genre"],
+                            cover_art_url=song.get("cover_art_url"),
                             average_rating=song["average_rating"],
                             score=90,  # Default score for cached items
                             reason="Based on your listening history"
@@ -159,6 +160,7 @@ class RecommendationService:
                     artist_name=candidate["artist_name"],
                     album_title=candidate["album_title"],
                     genre=candidate["genre"],
+                    cover_art_url=candidate.get("cover_art_url"),
                     average_rating=candidate["average_rating"],
                     score=score,
                     reason=reason
@@ -260,6 +262,7 @@ class RecommendationService:
                 artist_name=song["artist_name"],
                 album_title=song["album_title"],
                 genre=song["genre"],
+                cover_art_url=song.get("cover_art_url"),
                 average_rating=song["average_rating"],
                 score=90,
                 reason="Popular among Sonic Immersive users"

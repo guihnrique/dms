@@ -94,6 +94,7 @@ class SongRepository:
         page: int = 1,
         page_size: int = 20,
         album_id: Optional[int] = None,
+        artist_id: Optional[int] = None,
         include_deleted: bool = False
     ) -> Tuple[List[Song], int]:
         """List songs with pagination, excluding deleted by default"""
@@ -107,6 +108,9 @@ class SongRepository:
         if album_id:
             query = query.where(Song.album_id == album_id)
 
+        if artist_id:
+            query = query.join(Album).where(Album.artist_id == artist_id)
+
         if not include_deleted:
             query = query.where(Song.deleted_at.is_(None))
 
@@ -119,6 +123,8 @@ class SongRepository:
         count_query = select(func.count()).select_from(Song)
         if album_id:
             count_query = count_query.where(Song.album_id == album_id)
+        if artist_id:
+            count_query = count_query.join(Album).where(Album.artist_id == artist_id)
         if not include_deleted:
             count_query = count_query.where(Song.deleted_at.is_(None))
 

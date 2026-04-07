@@ -8,12 +8,14 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
 import { AddToPlaylistModal } from '../components/AddToPlaylistModal';
+import { useAuth } from '../context/AuthContext';
 import { albumsAPI, songsAPI, reviewsAPI, favoritesAPI } from '../api/services';
 import type { Album, Song, Review } from '../api/types';
 
 export function AlbumDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [album, setAlbum] = useState<Album | null>(null);
   const [songs, setSongs] = useState<Song[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -25,6 +27,7 @@ export function AlbumDetailPage() {
   const [votingReview, setVotingReview] = useState<string | null>(null);
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
   const [selectedSongForPlaylist, setSelectedSongForPlaylist] = useState<number | null>(null);
+  const [selectedSongsForPlaylist, setSelectedSongsForPlaylist] = useState<number[]>([]);
 
   useEffect(() => {
     if (id) {
@@ -51,10 +54,20 @@ export function AlbumDetailPage() {
       // Load favorite status for all songs
       await loadSongFavorites(songsData.items.map(s => s.id));
 
-      // Load reviews for first song if available
+      // Load reviews for all songs in the album
       if (songsData.items.length > 0) {
-        const reviewsData = await reviewsAPI.listForSong(songsData.items[0].id, 1, 5);
-        setReviews(reviewsData.items);
+        const allReviews: Review[] = [];
+        for (const song of songsData.items) {
+          try {
+            const reviewsData = await reviewsAPI.listForSong(song.id, 1, 10);
+            allReviews.push(...reviewsData.items);
+          } catch (err) {
+            console.error(`Failed to load reviews for song ${song.id}:`, err);
+          }
+        }
+        // Sort by created_at descending and limit to 10 most recent
+        allReviews.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+        setReviews(allReviews.slice(0, 10));
       }
     } catch (error) {
       console.error('Failed to load album:', error);
@@ -64,6 +77,14 @@ export function AlbumDetailPage() {
   }
 
   async function loadSongFavorites(songIds: number[]) {
+    if (!user) {
+      // User not authenticated, set all to false
+      const favorites: Record<number, boolean> = {};
+      songIds.forEach(songId => favorites[songId] = false);
+      setSongFavorites(favorites);
+      return;
+    }
+
     try {
       const favorites: Record<number, boolean> = {};
       await Promise.all(
@@ -85,6 +106,11 @@ export function AlbumDetailPage() {
   async function toggleSongFavorite(songId: number, e: React.MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
+
+    if (!user) {
+      navigate('/login');
+      return;
+    }
 
     try {
       const currentStatus = songFavorites[songId] || false;
@@ -113,6 +139,11 @@ export function AlbumDetailPage() {
 
   async function toggleFavorite() {
     if (!id) return;
+
+    if (!user) {
+      navigate('/login');
+      return;
+    }
 
     try {
       setFavoritingLoading(true);
@@ -276,7 +307,8 @@ export function AlbumDetailPage() {
                 {songs.length > 0 && (
                   <button
                     onClick={() => {
-                      setSelectedSongForPlaylist(songs[0].id);
+                      setSelectedSongsForPlaylist(songs.map(s => s.id));
+                      setSelectedSongForPlaylist(null);
                       setShowPlaylistModal(true);
                     }}
                     className="px-8 py-3 rounded-full border border-outline/20 backdrop-blur-md bg-white/5 text-white font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:bg-white/10 transition-all"
@@ -328,6 +360,21 @@ export function AlbumDetailPage() {
                   />
                 </div>
 
+                {/* Album Cover Thumbnail */}
+                <div className="flex-shrink-0">
+                  {song.cover_art_url ? (
+                    <img
+                      src={song.cover_art_url}
+                      alt={song.title}
+                      className="w-12 h-12 rounded-lg object-cover"
+                    />
+                  ) : (
+                    <div className="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+                      <Icon name="music_note" size="sm" className="text-on-surface-variant" decorative />
+                    </div>
+                  )}
+                </div>
+
                 <div className="flex-1">
                   <h4 className="text-white font-bold">{song.title}</h4>
                   <p className="text-xs text-on-surface-variant">
@@ -341,6 +388,7 @@ export function AlbumDetailPage() {
                       e.preventDefault();
                       e.stopPropagation();
                       setSelectedSongForPlaylist(song.id);
+                      setSelectedSongsForPlaylist([]);
                       setShowPlaylistModal(true);
                     }}
                     className="opacity-0 group-hover:opacity-100 hover:text-primary transition-all"
@@ -435,19 +483,19 @@ export function AlbumDetailPage() {
       </main>
 
       {/* Add to Playlist Modal */}
-      {selectedSongForPlaylist && (
-        <AddToPlaylistModal
-          songId={selectedSongForPlaylist}
-          isOpen={showPlaylistModal}
-          onClose={() => {
-            setShowPlaylistModal(false);
-            setSelectedSongForPlaylist(null);
-          }}
-          onSuccess={() => {
-            console.log('Added to playlist successfully');
-          }}
-        />
-      )}
+      <AddToPlaylistModal
+        songId={selectedSongForPlaylist || undefined}
+        songIds={selectedSongsForPlaylist.length > 0 ? selectedSongsForPlaylist : undefined}
+        isOpen={showPlaylistModal}
+        onClose={() => {
+          setShowPlaylistModal(false);
+          setSelectedSongForPlaylist(null);
+          setSelectedSongsForPlaylist([]);
+        }}
+        onSuccess={() => {
+          console.log('Added to playlist successfully');
+        }}
+      />
     </>
   );
 }

@@ -28,6 +28,7 @@ class Artist(Base):
     # Artist attributes
     name = Column(String(200), nullable=False)
     country = Column(String(2), nullable=False)  # ISO 3166-1 alpha-2
+    photo_url = Column(String, nullable=True)  # Artist profile photo URL
 
     # Timestamps
     created_at = Column(TIMESTAMP(timezone=True), default=datetime.utcnow, nullable=False)

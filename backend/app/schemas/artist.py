@@ -74,6 +74,7 @@ class ArtistResponse(BaseModel):
     id: int
     name: str
     country: str
+    photo_url: Optional[str] = Field(None, description="Artist profile photo URL")
     albums_count: int = Field(..., description="Number of albums by this artist")
     created_at: datetime
     updated_at: datetime

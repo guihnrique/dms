@@ -120,7 +120,8 @@ class RecommendationRepository:
                 Song.review_count,
                 Artist.name.label("artist_name"),
                 Artist.id.label("artist_id"),
-                Album.title.label("album_title")
+                Album.title.label("album_title"),
+                Album.album_cover_url.label("cover_art_url")
             )
             .join(Album, Song.album_id == Album.id)
             .join(Artist, Album.artist_id == Artist.id)
@@ -143,7 +144,8 @@ class RecommendationRepository:
                 "review_count": row.review_count,
                 "artist_name": row.artist_name,
                 "artist_id": row.artist_id,
-                "album_title": row.album_title
+                "album_title": row.album_title,
+                "cover_art_url": row.cover_art_url
             }
             for row in rows
         ]
@@ -166,7 +168,8 @@ class RecommendationRepository:
                 Song.review_count,
                 Artist.name.label("artist_name"),
                 Artist.id.label("artist_id"),
-                Album.title.label("album_title")
+                Album.title.label("album_title"),
+                Album.album_cover_url.label("cover_art_url")
             )
             .join(Album, Song.album_id == Album.id)
             .join(Artist, Album.artist_id == Artist.id)
@@ -191,7 +194,8 @@ class RecommendationRepository:
                 "review_count": row.review_count,
                 "artist_name": row.artist_name,
                 "artist_id": row.artist_id,
-                "album_title": row.album_title
+                "album_title": row.album_title,
+                "cover_art_url": row.cover_art_url
             }
             for row in rows
         ]
@@ -209,7 +213,8 @@ class RecommendationRepository:
                 Song.review_count,
                 Artist.name.label("artist_name"),
                 Artist.id.label("artist_id"),
-                Album.title.label("album_title")
+                Album.title.label("album_title"),
+                Album.album_cover_url.label("cover_art_url")
             )
             .join(Album, Song.album_id == Album.id)
             .join(Artist, Album.artist_id == Artist.id)
@@ -231,7 +236,8 @@ class RecommendationRepository:
                 "review_count": row.review_count,
                 "artist_name": row.artist_name,
                 "artist_id": row.artist_id,
-                "album_title": row.album_title
+                "album_title": row.album_title,
+                "cover_art_url": row.cover_art_url
             }
             for row in rows
         ]

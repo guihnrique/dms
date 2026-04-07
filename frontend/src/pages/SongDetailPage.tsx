@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { TopBar } from '../components/TopBar';
 import { Icon } from '../components/Icon';
 import { AddToPlaylistModal } from '../components/AddToPlaylistModal';
@@ -15,6 +15,7 @@ import type { Song, Review } from '../api/types';
 export function SongDetailPage() {
   const { id } = useParams<{ id: string }>();
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [song, setSong] = useState<Song | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
@@ -89,7 +90,12 @@ export function SongDetailPage() {
   }
 
   async function toggleFavorite() {
-    if (!user || !id) return;
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+
+    if (!id) return;
 
     try {
       setFavoritingLoading(true);
@@ -194,9 +200,9 @@ export function SongDetailPage() {
               {/* Album Art */}
               <div className="w-full md:w-80 flex-shrink-0">
                 <div className="group relative aspect-square rounded-3xl bg-surface-container overflow-hidden shadow-2xl">
-                  {song.album?.cover_art_url ? (
+                  {song.cover_art_url ? (
                     <img
-                      src={song.album.cover_art_url}
+                      src={song.cover_art_url}
                       alt={song.title}
                       className="w-full h-full object-cover"
                     />
@@ -239,23 +245,23 @@ export function SongDetailPage() {
 
                 {/* Artist & Album Links */}
                 <div className="flex flex-wrap items-center gap-2 text-lg mb-6">
-                  {song.album?.artist && (
+                  {song.artist_name && song.artist_id && (
                     <>
                       <Link
-                        to={`/artists/${song.album.artist_id}`}
+                        to={`/artists/${song.artist_id}`}
                         className="font-bold text-white hover:text-primary transition-colors"
                       >
-                        {song.album.artist.name}
+                        {song.artist_name}
                       </Link>
                       <span className="text-on-surface-variant">·</span>
                     </>
                   )}
-                  {song.album && (
+                  {song.album_title && (
                     <Link
                       to={`/albums/${song.album_id}`}
                       className="text-on-surface-variant hover:text-white transition-colors"
                     >
-                      {song.album.title}
+                      {song.album_title}
                     </Link>
                   )}
                 </div>

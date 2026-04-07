@@ -33,7 +33,7 @@ export interface Artist {
   id: number;
   name: string;
   bio?: string;
-  image_url?: string;
+  photo_url?: string;
   albums_count: number;
   created_at: string;
   updated_at: string;
@@ -72,10 +72,12 @@ export interface Song {
   title: string;
   album_id: number;
   album_title: string;
+  artist_id?: number;
   artist_name: string;
   duration_seconds: number;
   genre?: string;
   year?: number;
+  cover_art_url?: string;
   average_rating?: number;
   review_count: number;
   created_at: string;
@@ -111,6 +113,7 @@ export interface PlaylistSong {
   album_id: number;
   album_title: string;
   duration_seconds: number;
+  cover_art_url?: string;
 }
 
 export interface PlaylistListResponse {
@@ -183,6 +186,7 @@ export interface SongResult {
   artist_name: string;
   album_title: string;
   genre?: string;
+  cover_art_url?: string;
   average_rating?: number | string | null;
   review_count: number;
   relevance_score: number;
@@ -200,6 +204,7 @@ export interface RecommendedSong {
   artist_name: string;
   album_title: string;
   genre?: string;
+  cover_art_url?: string;
   average_rating?: number;
   score: number;
   reason: string;

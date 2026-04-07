@@ -29,6 +29,7 @@ class SongResponse:
         self.duration_seconds = song.duration_seconds
         self.genre = song.genre
         self.year = song.year
+        self.cover_art_url = song.album.album_cover_url if song.album else None
         self.external_links = song.external_links
         self.deleted_at = song.deleted_at
         self.created_at = song.created_at
@@ -110,6 +111,7 @@ class SongService:
         page: int = 1,
         page_size: int = 20,
         album_id: Optional[int] = None,
+        artist_id: Optional[int] = None,
         include_deleted: bool = False
     ) -> Dict[str, Any]:
         """List songs with pagination and filtering"""
@@ -117,6 +119,7 @@ class SongService:
             page=page,
             page_size=page_size,
             album_id=album_id,
+            artist_id=artist_id,
             include_deleted=include_deleted
         )
 

@@ -52,6 +52,7 @@ async def create_song(
             duration_seconds=song.duration_seconds,
             genre=song.genre,
             year=song.year,
+            cover_art_url=song.cover_art_url,
             external_links=song.external_links,
             deleted_at=song.deleted_at,
             created_at=song.created_at,
@@ -88,6 +89,7 @@ async def get_song(
         duration_seconds=song.duration_seconds,
         genre=song.genre,
         year=song.year,
+        cover_art_url=song.cover_art_url,
         external_links=song.external_links,
         deleted_at=song.deleted_at,
         created_at=song.created_at,
@@ -100,6 +102,7 @@ async def list_songs(
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
     album_id: Optional[int] = Query(None, description="Filter by album ID"),
+    artist_id: Optional[int] = Query(None, description="Filter by artist ID"),
     db: AsyncSession = Depends(get_db)
 ):
     """List songs with pagination and filtering - Public endpoint"""
@@ -109,6 +112,7 @@ async def list_songs(
         page=page,
         page_size=page_size,
         album_id=album_id,
+        artist_id=artist_id,
         include_deleted=False
     )
 
@@ -123,6 +127,7 @@ async def list_songs(
             duration_seconds=song.duration_seconds,
             genre=song.genre,
             year=song.year,
+            cover_art_url=song.cover_art_url,
             external_links=song.external_links,
             deleted_at=song.deleted_at,
             created_at=song.created_at,
@@ -171,6 +176,7 @@ async def update_song(
             duration_seconds=song.duration_seconds,
             genre=song.genre,
             year=song.year,
+            cover_art_url=song.cover_art_url,
             external_links=song.external_links,
             deleted_at=song.deleted_at,
             created_at=song.created_at,
@@ -219,6 +225,7 @@ async def restore_song(
         duration_seconds=song.duration_seconds,
         genre=song.genre,
         year=song.year,
+        cover_art_url=song.cover_art_url,
         external_links=song.external_links,
         deleted_at=song.deleted_at,
         created_at=song.created_at,

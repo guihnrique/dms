@@ -231,14 +231,22 @@ export function SearchPage() {
                         index !== 0 ? 'border-t border-white/5' : ''
                       }`}
                     >
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-dim/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
-                        <Icon
-                          name="music_note"
-                          size="sm"
-                          className="text-primary"
-                          decorative
+                      {song.cover_art_url ? (
+                        <img
+                          src={song.cover_art_url}
+                          alt={song.title}
+                          className="w-12 h-12 rounded-lg object-cover flex-shrink-0"
                         />
-                      </div>
+                      ) : (
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-dim/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
+                          <Icon
+                            name="music_note"
+                            size="sm"
+                            className="text-primary"
+                            decorative
+                          />
+                        </div>
+                      )}
                       <div className="flex-1 min-w-0">
                         <p className="font-bold text-white truncate">
                           {song.title}

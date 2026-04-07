@@ -92,6 +92,7 @@ class SongResult(BaseModel):
     artist_name: str
     album_title: str
     genre: Optional[str]
+    cover_art_url: Optional[str] = None
     average_rating: Optional[Decimal]
     review_count: int
     relevance_score: int = Field(..., ge=0, le=100, description="Relevance score 0-100")
@@ -112,6 +113,7 @@ class RecommendedSong(BaseModel):
     artist_name: str
     album_title: str
     genre: Optional[str]
+    cover_art_url: Optional[str] = None
     average_rating: Optional[Decimal]
     score: int = Field(..., ge=0, le=100, description="Recommendation score 0-100")
     reason: str = Field(..., description="Human-readable explanation")

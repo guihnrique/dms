@@ -123,7 +123,8 @@ class PlaylistSongRepository:
                 Artist.name.label('artist_name'),
                 Album.id.label('album_id'),
                 Album.title.label('album_title'),
-                Song.duration_seconds
+                Song.duration_seconds,
+                Album.album_cover_url.label('cover_art_url')
             )
             .join(Song, PlaylistSong.song_id == Song.id)
             .join(Album, Song.album_id == Album.id)
@@ -149,7 +150,8 @@ class PlaylistSongRepository:
                 'artist_name': row.artist_name,
                 'album_id': row.album_id,
                 'album_title': row.album_title,
-                'duration_seconds': row.duration_seconds
+                'duration_seconds': row.duration_seconds,
+                'cover_art_url': row.cover_art_url
             })
 
         return songs
