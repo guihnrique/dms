@@ -15,18 +15,17 @@ services:
       - key: JWT_ALGORITHM
         value: HS256
       - key: JWT_EXPIRATION_HOURS
-        value: 24
+        value: "24"
       - key: ENVIRONMENT
         value: production
       - key: FRONTEND_URL
         sync: false
     healthCheckPath: /health
 
-  # Frontend
+  # Frontend Static Site
   - type: web
     name: dms-frontend
     runtime: static
-    region: oregon
     plan: free
     buildCommand: "cd frontend && npm install && npm run build"
     staticPublishPath: frontend/dist
@@ -41,6 +40,9 @@ services:
       - path: /*
         name: X-Content-Type-Options
         value: nosniff
+      - path: /*
+        name: X-XSS-Protection
+        value: "1; mode=block"
     routes:
       - type: rewrite
         source: /*
