@@ -217,12 +217,45 @@ See `.sdd/` directory for specifications.
 
 MIT
 
+## Deployment
+
+### Production Deployment (Render + Neon)
+
+Para fazer deploy da aplicação em produção usando Render.com e Neon PostgreSQL:
+
+1. **Leia o guia completo**: [DEPLOY.md](DEPLOY.md)
+2. **Configure o banco**: String de conexão Neon
+3. **Deploy no Render**: Use o arquivo `render.yaml` incluído
+4. **Configure variáveis**: DATABASE_URL, JWT_SECRET, FRONTEND_URL, VITE_API_URL
+
+```bash
+# Opção 1: Deploy via Blueprint (Recomendado)
+# - Acesse Render Dashboard
+# - New + → Blueprint
+# - Conecte o repositório GitHub
+# - Configure as variáveis de ambiente
+
+# Opção 2: Deploy manual de cada serviço
+# - Backend: Web Service (Python)
+# - Frontend: Static Site
+```
+
+### Hospedagem Gratuita
+
+✅ **Backend**: Render.com (Free tier)
+✅ **Frontend**: Render.com Static Site (Free)
+✅ **Database**: Neon PostgreSQL (Free tier - 10 GB)
+✅ **SSL**: Automático (Render)
+
+⚠️ **Nota**: Serviços gratuitos entram em sleep após 15 min de inatividade
+
 ## Status
 
 ✅ **Backend**: 100% complete (5 specs implemented)
 ✅ **Frontend**: 100% complete (design system + pages)
 ✅ **Database**: All migrations executed
 ✅ **Integration**: Ready for production
+✅ **Deploy Ready**: Render + Neon configuration included
 
 ---
 
