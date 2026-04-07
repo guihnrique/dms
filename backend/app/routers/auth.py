@@ -185,7 +185,7 @@ async def login(
             value=token,
             httponly=True,      # Prevent JavaScript access
             secure=True,        # HTTPS only (in production)
-            samesite="strict",  # CSRF protection
+            samesite="none",    # Allow cross-site cookies (required for different domains)
             max_age=86400       # 24 hours (same as token expiration)
         )
 
