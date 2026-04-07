@@ -167,7 +167,7 @@ export interface SearchResponse {
 export interface ArtistResult {
   id: number;
   name: string;
-  photo_url?: string | null;
+  photo_url?: string;
   relevance_score: number;
   albums_count: number;
 }
