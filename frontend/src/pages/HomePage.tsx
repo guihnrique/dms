@@ -41,7 +41,7 @@ export function HomePage() {
         <div className="flex items-center justify-center min-h-[50vh]">
           <div className="text-center">
             <Icon name="refresh" size="lg" className="animate-spin mx-auto mb-4" />
-            <p className="text-on-surface-variant">Loading...</p>
+            <p className="text-on-surface-variant">Carregando...</p>
           </div>
         </div>
       </Layout.Container>
@@ -53,22 +53,22 @@ export function HomePage() {
       {/* Hero Section */}
       <div className="pt-32 pb-16 text-center">
         <h1 className="font-headline text-6xl font-medium mb-6 text-gradient">
-          The Sonic Immersive
+          Digital Music Store
         </h1>
         <p className="text-xl text-on-surface-variant mb-8 max-w-2xl mx-auto">
-          Discover, share, and immerse yourself in the world's music
+          Descubra, compartilhe e mergulhe no mundo da música
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link to="/search">
             <Button variant="primary" size="lg">
               <Icon name="search" size="sm" className="mr-2" />
-              Search Music
+              Buscar Músicas
             </Button>
           </Link>
           <Link to="/recommendations">
             <Button variant="secondary" size="lg">
               <Icon name="magic_button" size="sm" className="mr-2" />
-              Get Recommendations
+              Recomendações
             </Button>
           </Link>
         </div>
@@ -78,10 +78,10 @@ export function HomePage() {
       {featuredArtists.length > 0 && (
         <div className="mb-16">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="font-headline text-3xl">Featured Artists</h2>
+            <h2 className="font-headline text-3xl">Artistas em Destaque</h2>
             <Link to="/artists">
               <Button variant="ghost" size="sm">
-                View All
+                Ver Todos
                 <Icon name="arrow_forward" size="sm" className="ml-2" />
               </Button>
             </Link>
@@ -93,7 +93,7 @@ export function HomePage() {
                   <Card.Content>
                     <h3 className="font-headline text-xl mb-2">{artist.name}</h3>
                     <p className="text-on-surface-variant text-sm">
-                      {artist.albums_count} {artist.albums_count === 1 ? 'album' : 'albums'}
+                      {artist.albums_count} {artist.albums_count === 1 ? 'álbum' : 'álbuns'}
                     </p>
                   </Card.Content>
                 </Card>
@@ -107,10 +107,10 @@ export function HomePage() {
       {featuredAlbums.length > 0 && (
         <div className="mb-16">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="font-headline text-3xl">Recent Albums</h2>
+            <h2 className="font-headline text-3xl">Álbuns Recentes</h2>
             <Link to="/albums">
               <Button variant="ghost" size="sm">
-                View All
+                Ver Todos
                 <Icon name="arrow_forward" size="sm" className="ml-2" />
               </Button>
             </Link>
@@ -141,7 +141,7 @@ export function HomePage() {
       {/* Top Songs */}
       {topSongs.length > 0 && (
         <div className="mb-16">
-          <h2 className="font-headline text-3xl mb-6">Top Songs</h2>
+          <h2 className="font-headline text-3xl mb-6">Músicas Populares</h2>
           <Card glass>
             <Card.Content>
               <div className="space-y-3">
